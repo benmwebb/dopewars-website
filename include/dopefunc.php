@@ -106,7 +106,7 @@
           "width=\"88\" height=\"31\" alt=\"SourceForge Logo\" />";
     print "  </a>\n";
 
-    print "  Written by <a href=\"mailto:ben@bellatrix.pcl.ox.ac.uk\">".
+    print "  Written by <a href=\"mailto:benwebb@users.sf.net\">".
           "Ben Webb</a><br />\n";
     print " This page last updated: $modtime\n";
     print "</address>\n\n</body>\n\n</html>\n";
