@@ -1,19 +1,17 @@
-HTML    = index.html linux-gtk-multi.html linux-curses-multi.html \
-          linux-curses-ptbr.html win32-single.html winxp-multi.html
-MAKE    = make
-INCDIR  = ~ben/public_html/dopewars/include
-PHPROOT = ~ben/dopewars/web-template
-INCLUDE = ${INCDIR}/dopefunc.php
-PHPDIR  = ${PHPROOT}/screenshots
+WEB=${WEBTOP}/screenshots
+FILES=${WEB}/index.html ${WEB}/linux-gtk-multi.html \
+      ${WEB}/linux-curses-multi.html ${WEB}/linux-curses-ptbr.html \
+      ${WEB}/win32-single.html ${WEB}/winxp-multi.html
+TOPDIR=..
 
-.PHONY: subdirs ${SUBDIRS}
+include ${TOPDIR}/Makefile.vars
 
-all : ${HTML}
+${WEB}/index.html: index.php ${INCLUDE}
+	@if [ ! -d ${WEB} ]; then mkdir -p ${WEB}; fi
+	php -d include_path="${TOPDIR}" -f $< > phpout
+	@grep -q "</html>" phpout && cp phpout $@ && rm phpout || (echo "Error occurred during production of $@: check phpout for errors"; exit 1)
 
-index.html : ${PHPDIR}/index.php ${INCLUDE}
-	php $< | awk 'BEGIN { body=0} ($$0=="" || $$0=="\r") && !body { body=1; next } body { print }' > phpout
-	@grep -q "</html>" phpout && mv phpout $@ || (echo "Error occurred during production of $@: check phpout for errors"; exit 1)
-
-%.html : ${PHPDIR}/index.php ${INCLUDE}
-	pic="$@" php $< | awk 'BEGIN { body=0} ($$0=="" || $$0=="\r") && !body { body=1; next } body { print }' > phpout
-	@grep -q "</html>" phpout && mv phpout $@ || (echo "Error occurred during production of $@: check phpout for errors"; exit 1)
+${WEB}/%.html: index.php ${INCLUDE}
+	@if [ ! -d ${WEB} ]; then mkdir -p ${WEB}; fi
+	pic="$@" php -d include_path="${TOPDIR}" -f $< > phpout
+	@grep -q "</html>" phpout && cp phpout $@ && rm phpout || (echo "Error occurred during production of $@: check phpout for errors"; exit 1)
