@@ -16,7 +16,8 @@
     )
   );
 
-  if ($pic) {
+  if (isset($_ENV['pic'])) {
+    $pic = $_ENV['pic'];
     $match='';
     if (substr($pic,-5)=='.html') $pic=substr($pic,0,-5);
     foreach($images as $category => $picarray) {

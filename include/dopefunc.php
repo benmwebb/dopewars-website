@@ -1,13 +1,13 @@
 <?php
 /* Functions for PHP-generated dopewars pages */
 
-  if ($mirror=='UK') {
+  if (isset($mirror) && $mirror=='UK') {
     $DOCROOT='http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/';
   } else unset($DOCROOT);
 
   include "./include/local.php";
 
-  if ($mirror) { $mirrorID="&amp;mirror=$mirror"; }
+  if (isset($mirror)) { $mirrorID="&amp;mirror=$mirror"; }
 
   $mainpage=$DOCROOT;
 
@@ -79,7 +79,9 @@
   function EndHTML($sourcefile='') {
     global $HTTP_SERVER_VARS,$DOCROOT;
 
-    if (!$sourcefile) $sourcefile = $HTTP_SERVER_VARS['PATH_TRANSLATED'];
+    if (!$sourcefile and isset($HTTP_SERVER_VARS['PATH_TRANSLATED'])) {
+      $sourcefile = $HTTP_SERVER_VARS['PATH_TRANSLATED'];
+    }
     if (!$sourcefile) $sourcefile = $HTTP_SERVER_VARS["argv"][0];
     if (!$sourcefile) {
       die("Cannot figure out which file we're processing...");
