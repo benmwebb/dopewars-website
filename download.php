@@ -129,7 +129,7 @@ the CVS server, run the following command:</p>
 code are occasionally made. The last was made on Aug 5th, 2002, and is
 available <a href="dopewars-cvs-20020805.tar.gz">here</a>.</p>
 
-<p><a href="mailto:ben@bellatrix.pcl.ox.ac.uk">Feedback</a> is, as always,
+<p><a href="mailto:benwebb@users.sf.net">Feedback</a> is, as always,
 appreciated, so that I can iron out any bugs in the code or configure script
 before the next "stable" release.</p>
 

@@ -61,7 +61,7 @@ or the
 <a href="http://lists.sourceforge.net/mailman/listinfo/dopewars-devel">dopewars
 mailing list</a>.
 You can also email enquiries to me directly at
-<a href="mailto:ben@bellatrix.pcl.ox.ac.uk">ben@bellatrix.pcl.ox.ac.uk</a>.</p>
+<a href="mailto:benwebb@users.sf.net">benwebb@users.sf.net</a>.</p>
 
 <p>If you discover a bug in the version you have, check the download page
 for a later version (or try the development code in CVS); chances are that the
