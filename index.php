@@ -1,16 +1,15 @@
 <?php
   include "include/dopefunc.php";
-  StartHTML("dopewars-1.5.8","Main Index");
+  StartHTML("dopewars-1.5.9","Main Index");
 ?>
 
 <h2>Make a fortune dealing drugs on the streets of New York...</h2>
 
 <?php  ListMirrors(); ?>
 
-<h3><a href="news.html">NEWS</a>: Version 1.5.8 is now available! This release
-adds Windows XP, GNOME2, and Unicode support, adds a default set of sound
-effects, and fixes some minor bugs. Get it from the
-<a href="download.html">download page</a>.
+<h3><a href="news.html">NEWS</a>: Version 1.5.9 is now available! This release
+fixes an annoying crash bug with the "drop drugs" button, and adds minor
+features. Get it from the <a href="download.html">download page</a>.
 </h3>
 
 <p>dopewars is a free Unix/Win32 rewrite of a game originally based on "Drug

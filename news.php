@@ -4,6 +4,11 @@
 ?>
 
 <dl>
+<dt><b>7th June 2003</b></dt>
+<dd>dopewars-1.5.9 released. This is largely a bugfix release, fixing a
+crash on pressing the "drop drugs" button, and adding minor improvements
+to the text-mode client.<p /></dd>
+
 <dt><b>21st October 2002</b></dt>
 <dd>dopewars-1.5.8 released. The Windows and GTK+2.0 builds now have fairly
 complete Unicode support. A default set of sounds is now provided, and
