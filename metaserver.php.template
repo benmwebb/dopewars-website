@@ -1,0 +1,30 @@
+<?php
+
+/* N.B. For production use, rename this to metaserver.php, and replace
+   "XXXX" in the mysql_connect call below with the password of your
+   MySQL database. */
+
+/* This is the dopewars metaserver. Note that this file does very little
+   on its own - all of the work is done by metastuff.php, and this file
+   is used only to connect to the MySQL database. (This is done so that
+   this file can be chown'ed to hide the database passwords from prying
+   eyes on the SF shell servers.) metastuff.php should define a function
+   MainFunc(), which is used as the main entry point. */
+ 
+/* Try to stop other scripts from including this one */
+  if (sizeof(get_included_files()) > 0) {
+    print "<p>Error: this file should be run directly, and not included.</p>";
+    exit();
+  }
+
+/* Read in the file that actually does all of the work */
+  include "./metastuff.php";
+
+/* Open the database, and pass the handle to "metastuff" */
+  $dbhand = @mysql_connect("mysql","dopewars","XXXX");
+  MainFunc($dbhand);
+
+/* Make sure that we don't leave any DB connections floating around */
+  mysql_close($dbhand);
+  unset($dbhand);
+?>
