@@ -5,8 +5,6 @@
 
 <h2>Make a fortune dealing drugs on the streets of New York...</h2>
 
-<?php  ListMirrors(); ?>
-
 <h3><a href="news.html">NEWS</a>: Version 1.5.9 is now available! This release
 fixes an annoying crash bug with the "drop drugs" button, and adds minor
 features. Get it from the <a href="download.html">download page</a>.

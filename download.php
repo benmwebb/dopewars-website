@@ -19,9 +19,6 @@ don't have RPM or they don't install properly, grab the tarball instead.</p>
 depending on how often I bother to rebuild them... So check the version
 numbers!</p>
 
-<p>Please use the <a href="index.html#mirrors">mirror</a> that is closest to you
-for a speedy download!</p>
-
 <p>All RPMs are <a href="http://www.gnupg.org/">GnuPG</a> signed. My public
 key is available
 <a href="http://dopewars.sourceforge.net/bwpubkey.txt">here</a> or
