@@ -108,8 +108,8 @@ Windows-only. Freeware.</li>
 <li><a href="http://www.umr.edu/~schuette/windealer.html">WinDealer</a>.
 An incomplete Windows version.</li>
 
-<li><a href="http://www.makemebig.com/chronic2k/intro.htm">chronic2k</a>.
-Another Windows version.</li>
+<li><a href="http://www.chronic2005.com/">Chronic 2005</a>.
+Another Windows version, with graphics.</li>
 
 <li><a href="http://www.geocities.com/drugwarz/drugwarz.htm">DrugWarz</a>.
 A Windows version written in Visual Basic, and set in St. Louis. Source code
