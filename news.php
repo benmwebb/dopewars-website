@@ -4,6 +4,10 @@
 ?>
 
 <dl>
+<dt><b>24th October 2004</b></dt>
+<dd>dopewars-1.5.10 released. This is largely a bugfix release, fixing a
+server DOS and some minor bugs in the text-mode client.<p /></dd>
+
 <dt><b>7th June 2003</b></dt>
 <dd>dopewars-1.5.9 released. This is largely a bugfix release, fixing a
 crash on pressing the "drop drugs" button, and adding minor improvements

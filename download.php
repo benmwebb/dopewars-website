@@ -11,50 +11,48 @@
 
 <p>dopewars should compile on practically any UNIX system which has the
 (n)curses library. It can also be compiled on Windows systems; see below.
-If you're running RedHat Linux 9 on an Intel-based system, you can install
+If you're running Fedora Core 2 on an Intel-based system, you can install
 dopewars by getting the relevant RPM(s) and reading the README file. If you
 don't have RPM or they don't install properly, grab the tarball instead.</p>
 
-<p>Latest stable version is <b>1.5.9</b>. The RPMs may be a little out of date,
+<p>Latest stable version is <b>1.5.10</b>. The RPMs may be a little out of date,
 depending on how often I bother to rebuild them... So check the version
 numbers!</p>
 
 <p>All RPMs are <a href="http://www.gnupg.org/">GnuPG</a> signed. My public
 key is available
-<a href="http://dopewars.sourceforge.net/bwpubkey.txt">here</a> or
-<a href="http://bellatrix.pcl.ox.ac.uk/~ben/bwpubkey.txt">here</a>. MD5
-checksums of all downloadable material are also available
-<a href="http://dopewars.sourceforge.net/md5-1.5.9.txt">here</a> or
-<a href="http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/md5-1.5.9.txt">here</a>.
+<a href="http://dopewars.sourceforge.net/pubkey.txt">here</a>.
+MD5 checksums of all downloadable material are also available
+<a href="http://dopewars.sourceforge.net/md5-1.5.10.txt">here</a>.
 </p>
 
 <h3>Microsoft Windows</h3>
 <p>Windows installer (Win95, Win98, WinNT, Win2000, WinME, WinXP),
-version 1.5.8: &nbsp;
-<?php Download("dopewars-1.5.9.exe"); ?>
+version 1.5.10: &nbsp;
+<?php Download("dopewars-1.5.10.exe"); ?>
 <br />
 (just run this program, and it will install dopewars automatically for you;
 if you're worried about Internet Explorer's "security" warning, see the
 <a href="faq.html#windows">FAQ</a>, or check its
-<?php Download("dopewars-1.5.9.exe.gpg", "GPG signature"); ?>
+<?php Download("dopewars-1.5.10.exe.gpg", "GPG signature"); ?>
 </p>
 
 <h3>RedHat Linux (and similar)</h3>
-<p>Binary RPM for RedHat 9/Intel, version 1.5.9: &nbsp;
-<?php Download("dopewars-1.5.9-1.i386.rpm"); ?>
+<p>Binary RPM for Fedora Core 2/Intel, version 1.5.10: &nbsp;
+<?php Download("dopewars-1.5.10-1.i386.rpm"); ?>
 <br />
 SDL_mixer (Simple DirectMedia Layer) sound plugin: &nbsp;
-<?php Download("dopewars-sdl-1.5.9-1.i386.rpm"); ?>
+<?php Download("dopewars-sdl-1.5.10-1.i386.rpm"); ?>
 </p>
 
 <h3>Source code</h3>
-<p>Source RPM, version 1.5.9: &nbsp;
-<?php Download("dopewars-1.5.9-1.src.rpm"); ?>
+<p>Source RPM, version 1.5.10: &nbsp;
+<?php Download("dopewars-1.5.10-1.src.rpm"); ?>
 </p>
 
-<p>Source code tarball, version 1.5.9: &nbsp;
-<?php Download("dopewars-1.5.9.tar.gz"); ?>
-<?php Download("dopewars-1.5.9.tar.gz.gpg", "(GPG)"); ?>
+<p>Source code tarball, version 1.5.10: &nbsp;
+<?php Download("dopewars-1.5.10.tar.gz"); ?>
+<?php Download("dopewars-1.5.10.tar.gz.gpg", "(GPG)"); ?>
 </p>
 
 <h3>Other Linux/Unix</h3>
@@ -140,6 +138,9 @@ for anything other than testing - they all contain bugs, including some
 severe security problems.</p>
 
 <p>
+<a href="oldversions/dopewars-1.5.9.tar.gz">Version 1.5.9.</a>
+ (<a href="oldversions/md5-1.5.9.txt">MD5</a>)
+ Released: 07-06-03<br />
 <a href="oldversions/dopewars-1.5.8.tar.gz">Version 1.5.8.</a>
  (<a href="oldversions/md5-1.5.8.txt">MD5</a>)
  Released: 21-10-02<br />

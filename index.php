@@ -1,13 +1,13 @@
 <?php
   include "include/dopefunc.php";
-  StartHTML("dopewars-1.5.9","Main Index");
+  StartHTML("dopewars-1.5.10","Main Index");
 ?>
 
 <h2>Make a fortune dealing drugs on the streets of New York...</h2>
 
-<h3><a href="news.html">NEWS</a>: Version 1.5.9 is now available! This release
-fixes an annoying crash bug with the "drop drugs" button, and adds minor
-features. Get it from the <a href="download.html">download page</a>.
+<h3><a href="news.html">NEWS</a>: Version 1.5.10 is now available! This release
+fixes a server DOS and some minor bugs in the text-mode client.
+Get it from the <a href="download.html">download page</a>.
 </h3>
 
 <p>dopewars is a free Unix/Win32 rewrite of a game originally based on "Drug
@@ -68,18 +68,5 @@ for a later version (or try the development code in CVS); chances are that the
 bug has already been reported and it's been fixed...</p>
 
 <?php WriteNavLinks(); ?>
-
-<p>Links to Ben Webb's pages:-</p>
-<ul>
-<li><a href="http://bellatrix.pcl.ox.ac.uk/~ben/">Main Index</a>;
-<a href="http://bellatrix.pcl.ox.ac.uk/~ben/directory.html">
-Site Directory</a>
-  <ul>
-  <li><a href="http://bellatrix.pcl.ox.ac.uk/~ben/programs.html">
-  Program download page</a>
-  </li>
-  </ul>
-</li>
-</ul>
 
 <?php EndHTML(); ?>
