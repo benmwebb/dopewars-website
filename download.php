@@ -82,7 +82,7 @@ FreeBSD port</a></p>
 
 <p><a href="ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/games/dopewars/README.html">NetBSD package</a></p>
 
-<p><a href="http://www.openbsd.org/3.2_packages/i386/dopewars-1.5.7.tgz-long.html">OpenBSD i386 package</a></p>
+<p><a href="http://www.openbsd.org/3.6_packages/i386/dopewars-1.5.7p2.tgz-long.html">OpenBSD i386 package</a></p>
 
 <h3>Documentation etc.</h3>
 
