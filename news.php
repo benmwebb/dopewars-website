@@ -5,6 +5,10 @@
 
 <dl>
 <dt><b>30th December 2005</b></dt>
+<dd>dopewars-1.5.12 released. This really fixes the potential exploit against
+the Windows server, which was not correctly fixed in 1.5.11.<p /></dd>
+
+<dt><b>30th December 2005</b></dt>
 <dd>dopewars-1.5.11 released. This is largely a security bugfix release,
 fixing a potential exploit against the Windows server when running as an
 NT serivce.<p /></dd>
