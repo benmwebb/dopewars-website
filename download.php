@@ -135,43 +135,13 @@ before the next "stable" release.</p>
 
 <h2>Old versions</h2>
 <p>If you desperately want them, all previous GPL versions of dopewars are also
-available below, as tarballs. N.B. It is not recommended to use these versions
-for anything other than testing - they all contain bugs, including some
-severe security problems.</p>
+available, mainly at the <a
+href="http://sourceforge.net/project/showfiles.php?group_id=11128">SourceForge
+files page</a>. Very old versions are also available below. N.B. It is not
+recommended to use these versions for anything other than testing - they all
+contain bugs, including some severe security problems!</p>
 
 <p>
-<a href="oldversions/dopewars-1.5.10.tar.gz">Version 1.5.10.</a>
- (<a href="oldversions/md5-1.5.10.txt">MD5</a>)
- Released: 24-10-04<br />
-<a href="oldversions/dopewars-1.5.9.tar.gz">Version 1.5.9.</a>
- (<a href="oldversions/md5-1.5.9.txt">MD5</a>)
- Released: 07-06-03<br />
-<a href="oldversions/dopewars-1.5.8.tar.gz">Version 1.5.8.</a>
- (<a href="oldversions/md5-1.5.8.txt">MD5</a>)
- Released: 21-10-02<br />
-<a href="oldversions/dopewars-1.5.7.tar.gz">Version 1.5.7.</a>
- (<a href="oldversions/md5-1.5.7.txt">MD5</a>)
- Released: 29-04-02<br />
-<a href="oldversions/dopewars-1.5.6.tar.gz">Version 1.5.6.</a>
- (<a href="oldversions/md5-1.5.6.txt">MD5</a>)
- Released: 29-04-02<br />
-<a href="oldversions/dopewars-1.5.5.tar.gz">Version 1.5.5.</a>
- (<a href="oldversions/md5-1.5.5.txt">MD5</a>)
- Released: 13-04-02<br />
-<a href="oldversions/dopewars-1.5.4.tar.gz">Version 1.5.4.</a>
- (<a href="oldversions/md5-1.5.4.txt">MD5</a>)
- Released: 03-03-02<br />
-<a href="oldversions/dopewars-1.5.3.tar.gz">Version 1.5.3.</a>
- (<a href="oldversions/md5-1.5.3.txt">MD5</a>)
- Released: 04-02-02<br />
-<a href="oldversions/dopewars-1.5.2.tar.gz">Version 1.5.2.</a>
- Released: 16-10-01<br />
-<a href="oldversions/dopewars-1.5.1.tar.gz">Version 1.5.1.</a>
- Released: 19-06-01<br />
-<a href="oldversions/dopewars-1.5.0.tar.gz">Version 1.5.0.</a>
- Released: 13-05-01<br />
-<a href="oldversions/dopewars-1.4.8.tar.gz">Version 1.4.8.</a>
- Released: 09-07-00<br />
 <a href="oldversions/dopewars-1.4.7.tar.gz">Version 1.4.7.</a>
  Released: 14-01-00<br />
 <a href="oldversions/dopewars-1.4.6.tar.gz">Version 1.4.6.</a>
