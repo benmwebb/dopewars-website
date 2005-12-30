@@ -4,6 +4,11 @@
 ?>
 
 <dl>
+<dt><b>30th December 2005</b></dt>
+<dd>dopewars-1.5.11 released. This is largely a security bugfix release,
+fixing a potential exploit against the Windows server when running as an
+NT serivce.<p /></dd>
+
 <dt><b>24th October 2004</b></dt>
 <dd>dopewars-1.5.10 released. This is largely a bugfix release, fixing a
 server DOS and some minor bugs in the text-mode client.<p /></dd>

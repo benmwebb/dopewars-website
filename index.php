@@ -1,12 +1,12 @@
 <?php
   include "include/dopefunc.php";
-  StartHTML("dopewars-1.5.10","Main Index");
+  StartHTML("dopewars-1.5.11","Main Index");
 ?>
 
 <h2>Make a fortune dealing drugs on the streets of New York...</h2>
 
-<h3><a href="news.html">NEWS</a>: Version 1.5.10 is now available! This release
-fixes a server DOS and some minor bugs in the text-mode client.
+<h3><a href="news.html">NEWS</a>: Version 1.5.11 is now available! This release
+fixes a potential exploit against the Windows server.
 Get it from the <a href="download.html">download page</a>.
 </h3>
 
