@@ -69,7 +69,7 @@ if you're connecting via. a proxy) the metaserver may report your domain
 name incorrectly, or refuse connection entirely; see the
 <?php print "<a href=\"".$DOCROOT."docs/metaserver.html\">metaserver</a>\n"; ?>
 page for tips on fixing this problem. Additional problems can usually be solved
-by <a href="mailto:ben@bellatrix.pcl.ox.ac.uk">emailing</a> the metaserver
+by <a href="mailto:benwebb@users.sf.net">emailing</a> the metaserver
 maintainer.</p>
 
 <p>To prevent your server announcing itself to the outside world, add the
