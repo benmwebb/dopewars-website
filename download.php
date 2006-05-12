@@ -103,31 +103,25 @@ FreeBSD port</a></p>
 <h2><a id="develop">Development versions</a></h2>
 <p>dopewars is in continual development, and so, to take advantage of
 new features, or to contribute to the code and/or translations, you can get
-the latest version of the code by CVS from
+the latest version of the code by
+<a href="http://sourceforge.net/docs/E09">Subversion</a> (SVN) from
 <a href="http://sourceforge.net/">SourceForge</a>. Be warned that this
 code may not be fully functional - that's why it's still in development!</p>
 
-<p>First, log in to the CVS server with the command</p>
-
-<pre class="unixcom">cvs -d:pserver:anonymous@cvs.dopewars.sourceforge.net:/cvsroot/dopewars login</pre>
-
-<p>You will be asked for a password - just hit the Enter key.</p>
+<p>See <a href="http://svnbook.red-bean.com/">the O'Reilly book</a> for more
+details about using Subversion.</p>
 
 <p>To obtain the whole code from scratch, use the following command, which will
-extract the latest CVS version into the directory <tt>dopewars</tt> below your
+extract the latest SVN version into the directory <tt>dopewars</tt> below your
 current directory:</p>
 
-<pre class="unixcom">cvs -z3 -d:pserver:anonymous@cvs.dopewars.sourceforge.net:/cvsroot/dopewars co dopewars</pre>
+<pre class="unixcom">svn co https://svn.sourceforge.net/svnroot/dopewars/dopewars/trunk dopewars</pre>
 
-<p>If you already have a copy of the dopewars CVS and wish to bring it up to
-date, change into the <tt>dopewars</tt> directory and then, after logging in to
-the CVS server, run the following command:</p>
+<p>If you already have a copy of the dopewars SVN and wish to bring it up to
+date, change into the <tt>dopewars</tt> directory and then run the following
+command:</p>
 
-<pre class="unixcom">cvs -z3 -d:pserver:anonymous@cvs.dopewars.sourceforge.net:/cvsroot/dopewars update</pre>
-
-<p>If you can't use CVS directly, then development snapshots of the source
-code are occasionally made. The last was made on Aug 5th, 2002, and is
-available <a href="dopewars-cvs-20020805.tar.gz">here</a>.</p>
+<pre class="unixcom">svn up</pre>
 
 <p><a href="mailto:benwebb@users.sf.net">Feedback</a> is, as always,
 appreciated, so that I can iron out any bugs in the code or configure script
