@@ -70,7 +70,7 @@ package</a></p> -->
 <p><a href="http://packages.debian.org/unstable/games/dopewars.html">Debian
 package</a></p>
 
-<p><a href="http://fink.sourceforge.net/pdb/package.php/dopewars">Mac OS X
+<p><a href="http://pdb.finkproject.org/pdb/package.php/dopewars">Mac OS X
 (Fink) package</a></p>
 
 <!--
