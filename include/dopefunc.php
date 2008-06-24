@@ -5,7 +5,7 @@
     $DOCROOT='http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/';
   } else unset($DOCROOT);
 
-  include "./include/local.php";
+  include "local.php";
 
   if (isset($mirror)) { $mirrorID="&amp;mirror=$mirror"; }
 
