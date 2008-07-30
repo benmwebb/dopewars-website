@@ -21,6 +21,10 @@ configuration files you can change by poking around in the source, which is
 freely available under the terms of the
 <a href="LICENCE">GNU General Public License</a>.</p>
 
+<p class="advisory"><b>ADVISORY:</b> dopewars is not recommended for children
+below 16 without parental supervision. We also do not condone real-life drug
+dealing.</p>
+
 <p>dopewars runs on Unix (e.g. Linux, Solaris, Mac OS X) systems and Win32
 (Windows 95, 98, NT, 2000, ME, XP).</p>
 
@@ -33,20 +37,10 @@ architecture, <a href="http://www.cs.nott.ac.uk/~esg/dopewars.html">is also
 available</a>.</p>
 
 <p>A version of dopewars written in <a href="http://www.python.org/">Python</a>
-is in development by <a href="mailto:mwm@mired.org">Mike Meyer</a>. The aim
-of this version is to enable dopewars to be run easily on other platforms
-(such as MacOS and Windows) and to greatly simplify the development
-of computerised dopewars players. The code is freely available
-<a href="http://www.mired.org/home/mwm/wars/">here</a>. The author would
-really appreciate assistance from keen Python programmers in getting the code
-to run cleanly on both Linux and Windows systems!</p>
-
-<p>dopewars is also an IRC bot! To play a game, connect with any IRC client
-to the IRC server at <b>irc.irc-hispano.org</b>. Then start a game by
-entering the command<br />
-<b>/msg WaRZ jugar</b> or <b>/msg BRoK jugar</b><br />
-...and then accept the DCC-CHAT. <b>WaRZ</b> is a space-trading themed version,
-while <b>BRoK</b> is a share-dealing version.</p>
+is in development by Mike Meyer. The aim of this version is to enable dopewars
+to be run easily on other platforms (such as MacOS and Windows) and to
+greatly simplify the development of computerised dopewars players. The code is 
+<a href="http://www.mired.org/home/mwm/wars/">freely available</a>.</p>
 
 <h3>Support</h3>
 

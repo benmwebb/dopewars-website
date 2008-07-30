@@ -1,0 +1,26 @@
+img.w3clink   { float: right;
+                padding-left: 5px;
+                border-style: none }
+p.sitelinks   { text-align: center;
+                width: 100%;
+                font: medium helvetica, arial, sans-serif;
+                color: #000000;
+                background-color: #dddddd }
+p.navlinks    { text-align: left;
+                width: 100%;
+                font: medium helvetica, arial, sans-serif;
+                color: #000000;
+                background-color: #dddddd }
+p.advisory    { text-align: left;
+                width: 100%;
+                font: large times, serif;
+                font-style: italic;
+                color: #000000;
+                background-color: #dddddd }
+body          { color: #000000;
+                background-color: #cccccc }
+table.mirrors { width: 100%;
+                text-align: center }
+
+/* Used for stuff to type in at a shell prompt */
+pre.unixcom   { margin-left: 1cm }
