@@ -404,7 +404,7 @@ $dt[$i]', Status='$st[$i]', Score='$sc[$i]', ServerID='$serverID', ID='$i'");
     if ($servername) WriteNavLinks("Active servers",$servername);
     else WriteNavLinks("Active servers");
 
-    EndHTML("metastuff.php");
+    EndHTML("metaserver.php");
   }
 
   function DoUplink($dbhand) {
