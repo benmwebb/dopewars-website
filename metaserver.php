@@ -2,14 +2,13 @@
 
   include "include/dopefunc.php";
 
-/* This is the main functionality of the dopewars metaserver. It should be
-   included from metaserver.php, and called as MainFunc(). */
+/* This is the main functionality of the dopewars metaserver. */
   function MainFunc($dbhand) {
-    global $getlist,$server,$output,$textoutput,$uplink;
+    global $server,$output,$textoutput,$uplink,$port;
     if (!$dbhand) {
       FatalError("Could not connect to dopewars database server");
     }
-    if (!@mysql_select_db("dopewars",$dbhand)) {
+    if (!@mysql_select_db("d11128_metaserver",$dbhand)) {
       FatalError("Could not locate the main dopewars database!");
     }
     if ($output=='text') {
@@ -17,15 +16,15 @@
       $textoutput=TRUE;
     } else $textoutput=FALSE;
     $servername='';
-    if ($getlist) {
-      ShowServers($dbhand);
+    if ($port) {
+      RegisterServer($dbhand);
 /*  } else if ($uplink) {
       DoUplink($dbhand);*/
     } else if ($server) {
       ServerInfo($dbhand,$server);
       $servername=$server;
     } else {
-      RegisterServer($dbhand);
+      ShowServers($dbhand);
     }
     PrintHTMLFooter($servername);
   }
@@ -37,6 +36,10 @@
     global $output,$getlist,$DOCROOT,$mirrorID;
     global $HTTP_SERVER_VARS;
     PrintHTMLHeader("Active dopewars servers",TRUE);
+
+    if (!$getlist) {
+      $getlist = 2;
+    }
 
 /* First, wipe any servers that haven't reported in for 4 hours
    (14400 seconds) and any associated tables */
@@ -65,7 +68,7 @@
 <p>dopewars incorporates limited multiplayer capabilities, with a server
 mode (the -s switch). The list below is maintained automatically, providing
 that you're running a server of version 1.5.1 or above. In some cases (usually
-if you're connecting via. a proxy) the metaserver may report your domain
+if you're connecting via a proxy) the metaserver may report your domain
 name incorrectly, or refuse connection entirely; see the
 <?php print "<a href=\"".$DOCROOT."docs/metaserver.html\">metaserver</a>\n"; ?>
 page for tips on fixing this problem. Additional problems can usually be solved
@@ -123,10 +126,10 @@ current high scores.</p>
 
   function FormatTimestamp($timestamp) {
     $year=substr($timestamp,0,4);
-    $month=substr($timestamp,4,2);
-    $day=substr($timestamp,6,2);
-    $hour=substr($timestamp,8,2);
-    $minute=substr($timestamp,10,2);
+    $month=substr($timestamp,5,2);
+    $day=substr($timestamp,8,2);
+    $hour=substr($timestamp,11,2);
+    $minute=substr($timestamp,14,2);
     return "$hour:$minute on $day/$month/$year";
   }
 
@@ -180,7 +183,7 @@ current high scores.</p>
     else print "<p>$msg</p>\n\n";
   }
 
-  function CheckHostOverride(&$realhostname) {
+  function CheckHostOverride(&$realhostname, $remoteIP) {
     global $password,$hostname;
     if ($password && $hostname) {
       $result = dope_query("SELECT * FROM hostoverride WHERE Password='$password' AND HostName='$hostname'");
@@ -190,6 +193,17 @@ current high scores.</p>
       $realhostname = $hostname;
       PrintParagraph("Hostname override password accepted");
       return TRUE;
+    } else if ($hostname) {
+      $IP = gethostbyname($hostname);
+      if ($IP == $hostname) {
+        FatalError("LocalName $hostname: unknown host!");
+      } else if ($IP == $remoteIP) {
+        $realhostname = $hostname;
+        PrintParagraph("DNS mapping $IP -> $hostname accepted");
+        return TRUE;
+      } else {
+        FatalError("Password required for LocalName $hostname ($IP) override");
+      }
     }
     return FALSE;
   }
@@ -208,16 +222,17 @@ current high scores.</p>
     $remoteIP = $HTTP_SERVER_VARS['REMOTE_ADDR'];
     $proxyIP = '';
 
-    if (CheckHostOverride($realhostname)) return;
-
-    if ($HTTP_SERVER_VARS['HTTP_X_FORWARDED_FOR'] != '') {
+    if ($HTTP_SERVER_VARS['HTTP_X_FORWARDED_FOR'] != ''
+        && $HTTP_SERVER_VARS['HTTP_X_FORWARDED_FOR'] != 'unknown') {
       $fwdIPs = $HTTP_SERVER_VARS['HTTP_X_FORWARDED_FOR'];
       $proxyIP = $HTTP_SERVER_VARS['REMOTE_ADDR'];
 /* Check for multiple forwards, and take the first IP if necessary */
       $splitIPs = explode(", ",$fwdIPs);
-      if ($splitIPs==$fwdIPs) $remoteIP=$fwdIPs;
+      if ($splitIPs==$fwdIPs || $split) $remoteIP=$fwdIPs;
       else $remoteIP=$splitIPs[0];
     }
+
+    if (CheckHostOverride($realhostname, $remoteIP)) return;
 
     $result = dope_query("SELECT HostName FROM localdns WHERE IP='$remoteIP'");
     $row=mysql_fetch_array($result);
@@ -256,11 +271,11 @@ current high scores.</p>
   function CheckValidProxy($oldproxyIP,$proxyIP,$HostName) {
     if ($proxyIP == $oldproxyIP) return;
     if (!$oldproxyIP) {
-      FatalError("Cannot update $HostName - you are connecting via. proxy $proxyIP, and this host last connected directly");
+      FatalError("Cannot update $HostName - you are connecting via proxy $proxyIP, and this host last connected directly");
     } else if (!proxyIP) {
-      FatalError("Cannot update $HostName - you are connecting directly, and this host last connected via. a proxy");
+      FatalError("Cannot update $HostName - you are connecting directly, and this host last connected via a proxy");
     } else {
-/*    FatalError("Cannot update $HostName - you are connecting via. a different proxy to the one it last connected via."); */
+/*    FatalError("Cannot update $HostName - you are connecting via a different proxy to the one it last connected via."); */
 
 /* We'll let this go for now - the paranoid will just have to use the password
    authentication scheme instead */
@@ -439,4 +454,24 @@ $dt[$i]', Status='$st[$i]', Score='$sc[$i]', ServerID='$serverID', ID='$i'");
     }
   }
     
+?>
+
+
+<?php
+/* Get database connection info from persistent storage */
+  $f = fopen("/home/groups/d/do/dopewars/persistent/web/sql-data", 'r');
+  $data = fgets($f);
+  fclose($f);
+  $split = explode("\t", trim($data));
+  $my_server = $split[0];
+  $my_username = $split[1];
+  $my_password = $split[2];
+
+/* Open the database, and pass the handle to MainFunc */
+  $dbhand = @mysql_connect($my_server, $my_username, $my_password);
+  MainFunc($dbhand);
+
+/* Make sure that we don't leave any DB connections floating around */
+  mysql_close($dbhand);
+  unset($dbhand);
 ?>
