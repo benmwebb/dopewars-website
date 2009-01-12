@@ -4,25 +4,23 @@
 
 /* This is the main functionality of the dopewars metaserver. */
   function MainFunc($dbhand) {
-    global $server,$output,$textoutput,$uplink,$port;
+    global $textoutput;
     if (!$dbhand) {
       FatalError("Could not connect to dopewars database server");
     }
     if (!@mysql_select_db("d11128_metaserver",$dbhand)) {
       FatalError("Could not locate the main dopewars database!");
     }
-    if ($output=='text') {
+    if ($_REQUEST['output'] == 'text') {
       header("Content-type: text/plain");
       $textoutput=TRUE;
     } else $textoutput=FALSE;
     $servername='';
-    if ($port) {
+    if ($_REQUEST['port']) {
       RegisterServer($dbhand);
-/*  } else if ($uplink) {
-      DoUplink($dbhand);*/
-    } else if ($server) {
-      ServerInfo($dbhand,$server);
-      $servername=$server;
+    } else if ($_REQUEST['server']) {
+      ServerInfo($dbhand, $_REQUEST['server']);
+      $servername = $_REQUEST['server'];
     } else {
       ShowServers($dbhand);
     }
@@ -33,12 +31,13 @@
   $NUMHISCORES = 18;
 
   function ShowServers($dbhand) {
-    global $output,$getlist,$DOCROOT,$mirrorID;
-    global $HTTP_SERVER_VARS;
+    global $DOCROOT,$mirrorID;
     PrintHTMLHeader("Active dopewars servers",TRUE);
 
-    if (!$getlist) {
+    if (!$_REQUEST['getlist']) {
       $getlist = 2;
+    } else {
+      $getlist = $_REQUEST['getlist'];
     }
 
 /* First, wipe any servers that haven't reported in for 4 hours
@@ -50,7 +49,7 @@
     $result = dope_query("DELETE FROM servers WHERE UNIX_TIMESTAMP(LastUpdate)+14400 < UNIX_TIMESTAMP(NOW())");
 
     $result = dope_query("SELECT servers.*,COUNT(Score) AS NumScores FROM servers LEFT JOIN highscores ON ServerID=servers.ID GROUP BY servers.ID ORDER BY UpSince");
-    if ($output=='text') {
+    if ($_REQUEST['output'] == 'text') {
       print "MetaServer:\n";
       while ($row=mysql_fetch_array($result)) {
         print $row['HostName']."\n".$row['Port']."\n".$row['Version']."\n";
@@ -89,7 +88,7 @@ versions only work with the "old" metaserver). Follow the link to see the
 current high scores.</p>
 
 <?php
-/*    print "<p>refer: ".$HTTP_SERVER_VARS['HTTP_REFERER']."</p>\n";*/
+/*    print "<p>refer: ".$_SERVER['HTTP_REFERER']."</p>\n";*/
       print "<table border=\"1\">\n\n";
       print "<tr><th>Server name</th><th>Port</th><th>Version</th>\n".
             "<th>Players</th><th>Max. Players</th><th>Last update</th>\n".
@@ -141,12 +140,22 @@ current high scores.</p>
   }
 
   function ValidateServerDetails() {
-    global $port,$nm,$dt,$sc,$NUMHISCORES,$version,$comment;
-    global $players,$maxplay,$hostname,$password;
-    $port=(int)$port;
+    global $NUMHISCORES;
+
+    $nm = $_REQUEST['nm'];
+    $dt = $_REQUEST['dt'];
+    $sc = $_REQUEST['sc'];
+    $version = $_REQUEST['version'];
+    $comment = $_REQUEST['comment'];
+    $players = $_REQUEST['players'];
+    $maxplay = $_REQUEST['maxplay'];
+    $hostname = $_REQUEST['hostname'];
+    $password = $_REQUEST['password'];
+
+    $port=(int)$_REQUEST['port'];
     $players=(int)$players;
     $maxplay=(int)$maxplay;
-    if (!$port) { FatalError("Invalid server port supplied"); }
+    if (!$_REQUEST['port']) { FatalError("Invalid server port supplied"); }
 
 /* Convert dates into SQL-friendly format */
     for ($i=0;$i<$NUMHISCORES;$i++) if ($nm[$i]) {
@@ -184,7 +193,8 @@ current high scores.</p>
   }
 
   function CheckHostOverride(&$realhostname, $remoteIP) {
-    global $password,$hostname;
+    $hostname = $_REQUEST['hostname'];
+    $password = $_REQUEST['password'];
     if ($password && $hostname) {
       $result = dope_query("SELECT * FROM hostoverride WHERE Password='$password' AND HostName='$hostname'");
       if (!(mysql_affected_rows())) {
@@ -216,16 +226,14 @@ current high scores.</p>
   }
 
   function GetServerLocation(&$realhostname,&$remoteIP,&$proxyIP) {
-    global $HTTP_SERVER_VARS;
-    global $password,$hostname;
 
-    $remoteIP = $HTTP_SERVER_VARS['REMOTE_ADDR'];
+    $remoteIP = $_SERVER['REMOTE_ADDR'];
     $proxyIP = '';
 
-    if ($HTTP_SERVER_VARS['HTTP_X_FORWARDED_FOR'] != ''
-        && $HTTP_SERVER_VARS['HTTP_X_FORWARDED_FOR'] != 'unknown') {
-      $fwdIPs = $HTTP_SERVER_VARS['HTTP_X_FORWARDED_FOR'];
-      $proxyIP = $HTTP_SERVER_VARS['REMOTE_ADDR'];
+    if ($_SERVER['HTTP_X_FORWARDED_FOR'] != ''
+        && $_SERVER['HTTP_X_FORWARDED_FOR'] != 'unknown') {
+      $fwdIPs = $_SERVER['HTTP_X_FORWARDED_FOR'];
+      $proxyIP = $_SERVER['REMOTE_ADDR'];
 /* Check for multiple forwards, and take the first IP if necessary */
       $splitIPs = explode(", ",$fwdIPs);
       if ($splitIPs==$fwdIPs || $split) $remoteIP=$fwdIPs;
@@ -255,14 +263,14 @@ current high scores.</p>
   }
 
   function CheckCredential($ProperCred) {
-    global $credential;
-/*  if ($credential != $ProperCred) {
+/*  if ($_REQUEST['credential'] != $ProperCred) {
       FatalError("Credential mismatch: server details not updated");
     }*/
   }
 
   function ValidDynamicDNS() {
-    global $password,$hostname;
+    $hostname = $_REQUEST['hostname'];
+    $password = $_REQUEST['password'];
     if ($hostname || !$password) return FALSE;
     $result = dope_query("SELECT * FROM dynamicdns WHERE Password='$password'");
     return (mysql_affected_rows()!=0);
@@ -284,8 +292,18 @@ current high scores.</p>
   }
 
   function RegisterServer($dbhand) {
-    global $port,$version,$comment,$players,$maxplay,$up,$password;
-    global $nm,$dt,$st,$sc,$NUMHISCORES;
+    global $NUMHISCORES;
+
+    $nm = $_REQUEST['nm'];
+    $dt = $_REQUEST['dt'];
+    $st = $_REQUEST['st'];
+    $sc = $_REQUEST['sc'];
+    $version = $_REQUEST['version'];
+    $comment = $_REQUEST['comment'];
+    $players = $_REQUEST['players'];
+    $maxplay = $_REQUEST['maxplay'];
+    $up = $_REQUEST['up'];
+    $password = $_REQUEST['password'];
 
     PrintHTMLHeader("dopewars server registration");
 
@@ -293,6 +311,7 @@ current high scores.</p>
     ValidateServerDetails();
 
     $validdyn=ValidDynamicDNS();
+    $port = $_REQUEST['port'];
 
     if ($validdyn) {
       PrintParagraph("Dynamic DNS password accepted");
@@ -407,56 +426,7 @@ $dt[$i]', Status='$st[$i]', Score='$sc[$i]', ServerID='$serverID', ID='$i'");
     EndHTML("metaserver.php");
   }
 
-  function DoUplink($dbhand) {
-    global $uplink,$serv,$port,$vers,$play,$maxp,$upda,$comm,$upsi;
-    global $HTTP_SERVER_VARS;
-
-    $result = dope_query("SELECT IP from uplink WHERE Password='$uplink'");
-
-    if ($HTTP_SERVER_VARS['HTTP_X_FORWARDED_FOR'] != '') {
-      $fwdIPs = $HTTP_SERVER_VARS['HTTP_X_FORWARDED_FOR'];
-      $splitIPs = explode(", ",$fwdIPs);
-      if ($splitIPs==$fwdIPs) $remoteIP=$fwdIPs;
-      else $remoteIP=$splitIPs[0];
-    } else {
-      $remoteIP = $HTTP_SERVER_VARS['REMOTE_ADDR'];
-    }
-    if (($row=mysql_fetch_array($result)) && $row['IP']==$remoteIP) {
-      PrintParagraph("Uplink request approved");
-    } else {
-      FatalError("Uplink request denied IP");
-    }
-
-    for ($i=0;$i<sizeof($serv);$i++) {
-      $result = dope_query("SELECT ID,UNIX_TIMESTAMP(LastUpdate) AS Upd FROM servers WHERE HostName='$serv[$i]' AND Port='$port[$i]'");
-      $createnew=(mysql_affected_rows()==0);
-      $row=mysql_fetch_array($result);
-      if ($createnew) {
-        $query="INSERT INTO servers SET ";
-      } else {
-        $query="UPDATE servers SET ";
-      }
-
-/* Only update existing entries if the "new" entry has a more recent
-   update time */
-      if ($createnew || $row['Upd'] < $upda[$i]) {
-        $query .= "HostName='$serv[$i]', ";
-        $query .= "Port='$port[$i]', ";
-        $query .= "LastUpdate=FROM_UNIXTIME($upda[$i]), ";
-        $query .= "UpSince=FROM_UNIXTIME($upsi[$i]), ";
-        $query .= "Version='$vers[$i]', ";
-        $query .= "Players='$play[$i]', ";
-        $query .= "MaxPlayers='$maxp[$i]', ";
-        $query .= "Comment='$comm[$i]'";
-        if (!$createnew) $query .= " WHERE HostName='$serv[$i]' AND Port='$port[$i]'";
-        dope_query($query);
-      }
-    }
-  }
-    
 ?>
-
-
 <?php
 /* Get database connection info from persistent storage */
   $f = fopen("/home/groups/d/do/dopewars/persistent/web/sql-data", 'r');
