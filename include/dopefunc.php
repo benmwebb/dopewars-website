@@ -77,12 +77,12 @@
   }
 
   function EndHTML($sourcefile='') {
-    global $HTTP_SERVER_VARS,$DOCROOT;
+    global $DOCROOT;
 
-    if (!$sourcefile and isset($HTTP_SERVER_VARS['PATH_TRANSLATED'])) {
-      $sourcefile = $HTTP_SERVER_VARS['PATH_TRANSLATED'];
+    if (!$sourcefile and isset($_SERVER['PATH_TRANSLATED'])) {
+      $sourcefile = $_SERVER['PATH_TRANSLATED'];
     }
-    if (!$sourcefile) $sourcefile = $HTTP_SERVER_VARS["argv"][0];
+    if (!$sourcefile) $sourcefile = $_SERVER["argv"][0];
     if (!$sourcefile) {
       die("Cannot figure out which file we're processing...");
     }
