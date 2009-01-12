@@ -31,7 +31,7 @@
     print "  <link rel=\"stylesheet\" type=\"text/css\" ".
           "href=\"".$DOCROOT."dopewars.css\" />\n";
     print "  <link rel=\"made\" type=\"text/html\" ".
-          "href=\"mailto:ben@bellatrix.pcl.ox.ac.uk\" />\n";
+          "href=\"mailto:benwebb@users.sf.net\" />\n";
     print "  <title>$title</title>\n";
     print "</head>\n\n";
 
