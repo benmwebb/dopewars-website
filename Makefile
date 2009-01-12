@@ -2,7 +2,7 @@ WEB=${WEBTOP}
 FILES=${WEB}/index.html ${WEB}/download.html ${WEB}/faq.html ${WEB}/news.html \
       ${WEB}/dopewars.css ${WEB}/metaserver.php
 TOPDIR=.
-SUBDIRS=screenshots
+SUBDIRS=screenshots include
 
 include ${TOPDIR}/Makefile.include
 
