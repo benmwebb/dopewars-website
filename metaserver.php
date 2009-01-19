@@ -139,18 +139,12 @@ current high scores.</p>
     } else return $result;
   }
 
-  function ValidateServerDetails() {
+  function ValidateServerDetails(&$nm, &$dt, &$sc, &$version, &$comment,
+                                 &$hostname, &$password) {
     global $NUMHISCORES;
 
-    $nm = $_REQUEST['nm'];
-    $dt = $_REQUEST['dt'];
-    $sc = $_REQUEST['sc'];
-    $version = $_REQUEST['version'];
-    $comment = $_REQUEST['comment'];
     $players = $_REQUEST['players'];
     $maxplay = $_REQUEST['maxplay'];
-    $hostname = $_REQUEST['hostname'];
-    $password = $_REQUEST['password'];
 
     $port=(int)$_REQUEST['port'];
     $players=(int)$players;
@@ -303,12 +297,14 @@ current high scores.</p>
     $players = $_REQUEST['players'];
     $maxplay = $_REQUEST['maxplay'];
     $up = $_REQUEST['up'];
+    $hostname = $_REQUEST['hostname'];
     $password = $_REQUEST['password'];
 
     PrintHTMLHeader("dopewars server registration");
 
     GetServerLocation($HostName,$remoteIP,$proxyIP);
-    ValidateServerDetails();
+    ValidateServerDetails($nm, $dt, $sc, $version, $comment, $hostname,
+                          $password);
 
     $validdyn=ValidDynamicDNS();
     $port = $_REQUEST['port'];
@@ -375,8 +371,7 @@ current high scores.</p>
     }
 
     for ($i=0;$i<$NUMHISCORES;$i++) if ($nm[$i]) {
-      $result = dope_query("INSERT INTO highscores SET Name='$nm[$i]', Date='
-$dt[$i]', Status='$st[$i]', Score='$sc[$i]', ServerID='$serverID', ID='$i'");
+      $result = dope_query("INSERT INTO highscores SET Name='$nm[$i]', Date='$dt[$i]', Status='$st[$i]', Score='$sc[$i]', ServerID='$serverID', ID='$i'");
     }
   }
 
