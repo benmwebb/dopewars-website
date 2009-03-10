@@ -102,10 +102,12 @@
     print "  <a href=\"http://validator.w3.org/check/referer\">\n";
     print "    <img class=\"w3clink\" src=\"".$DOCROOT."valid-xhtml11.png\"".
           " alt=\"Valid XHTML 1.1\" />\n  </a>\n";
-    print "  <a href=\"http://sourceforge.net/\">\n";
-    print "    <img class=\"w3clink\" ".
-          "src=\"http://sourceforge.net/sflogo.php?group_id=11128&amp;type=1\"\n".
-          "width=\"88\" height=\"31\" alt=\"SourceForge Logo\" />";
+    print "  <a href=\"http://sourceforge.net/projects/dopewars\">\n";
+    print "    <img class=\"w3clink\" src=\"http://sflogo.sourceforge.net/" .
+          "sflogo.php?group_id=11128&amp;type=12\"\n" .
+          "     width=\"120\" height=\"30\"\n" .
+          "      alt=\"Fast, secure and Free Open Source software " .
+          "downloads\" />";
     print "  </a>\n";
 
     print "  Written by <a href=\"mailto:benwebb@users.sf.net\">".
