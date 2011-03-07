@@ -424,7 +424,7 @@ current high scores.</p>
 ?>
 <?php
 /* Get database connection info from persistent storage */
-  $f = fopen("/home/groups/d/do/dopewars/persistent/web/sql-data", 'r');
+  $f = fopen("/home/project-web/dopewars/persistent/web/sql-data", 'r');
   $data = fgets($f);
   fclose($f);
   $split = explode("\t", trim($data));
