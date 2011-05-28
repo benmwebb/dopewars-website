@@ -115,7 +115,7 @@ details about using Subversion.</p>
 extract the latest SVN version into the directory <tt>dopewars</tt> below your
 current directory:</p>
 
-<pre class="unixcom">svn co https://svn.sourceforge.net/svnroot/dopewars/dopewars/trunk dopewars</pre>
+<pre class="unixcom">svn co https://dopewars.svn.sourceforge.net/svnroot/dopewars/dopewars/trunk dopewars</pre>
 
 <p>If you already have a copy of the dopewars SVN and wish to bring it up to
 date, change into the <tt>dopewars</tt> directory and then run the following
