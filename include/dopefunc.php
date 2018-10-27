@@ -28,6 +28,7 @@
     print " \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n\n";
     print "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\">\n\n";
     print "<head>\n";
+    print "  <meta charset=\"utf-8\">\n";
     print "  <link rel=\"stylesheet\" type=\"text/css\" ".
           "href=\"".$DOCROOT."dopewars.css\" />\n";
     print "  <link rel=\"made\" type=\"text/html\" ".
