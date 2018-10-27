@@ -8,9 +8,6 @@
     if (!$dbhand) {
       FatalError("Could not connect to dopewars database server");
     }
-    if (!@mysql_select_db("d11128_metaserver",$dbhand)) {
-      FatalError("Could not locate the main dopewars database!");
-    }
     if ($_REQUEST['output'] == 'text') {
       header("Content-type: text/plain");
       $textoutput=TRUE;
@@ -42,16 +39,16 @@
 
 /* First, wipe any servers that haven't reported in for 4 hours
    (14400 seconds) and any associated tables */
-    $result = dope_query("SELECT ID FROM servers WHERE UNIX_TIMESTAMP(LastUpdate)+14400 < UNIX_TIMESTAMP(NOW())");
-    while ($row=mysql_fetch_array($result)) {
-      dope_query("DELETE FROM highscores WHERE ServerID='".$row['ID']."'");
+    $result = dope_query($dbhand, "SELECT ID FROM servers WHERE UNIX_TIMESTAMP(LastUpdate)+14400 < UNIX_TIMESTAMP(NOW())");
+    while ($row=$result->fetch_array()) {
+      dope_query($dbhand, "DELETE FROM highscores WHERE ServerID='".$row['ID']."'");
     }
-    $result = dope_query("DELETE FROM servers WHERE UNIX_TIMESTAMP(LastUpdate)+14400 < UNIX_TIMESTAMP(NOW())");
+    $result = dope_query($dbhand, "DELETE FROM servers WHERE UNIX_TIMESTAMP(LastUpdate)+14400 < UNIX_TIMESTAMP(NOW())");
 
-    $result = dope_query("SELECT servers.*,COUNT(Score) AS NumScores FROM servers LEFT JOIN highscores ON ServerID=servers.ID GROUP BY servers.ID ORDER BY UpSince");
+    $result = dope_query($dbhand, "SELECT servers.*,COUNT(Score) AS NumScores FROM servers LEFT JOIN highscores ON ServerID=servers.ID GROUP BY servers.ID ORDER BY UpSince");
     if ($_REQUEST['output'] == 'text') {
       print "MetaServer:\n";
-      while ($row=mysql_fetch_array($result)) {
+      while ($row=$result->fetch_array()) {
         print $row['HostName']."\n".$row['Port']."\n".$row['Version']."\n";
         if ($getlist>=2) {
           print $row['Players']."\n";
@@ -93,7 +90,7 @@ current high scores.</p>
       print "<tr><th>Server name</th><th>Port</th><th>Version</th>\n".
             "<th>Players</th><th>Max. Players</th><th>Last update</th>\n".
             "<th>Up since</th><th>Comment</th></tr>\n\n";
-      while ($row=mysql_fetch_array($result)) {
+      while ($row=$result->fetch_array()) {
         print "<tr>";
         print "<td>";
         HTMLQuote($row['Version']);
@@ -132,10 +129,10 @@ current high scores.</p>
     return "$hour:$minute on $day/$month/$year";
   }
 
-  function dope_query($query) {
-    $result = mysql_query($query);
+  function dope_query($dbhand, $query) {
+    $result = $dbhand->query($query);
     if (!$result) {
-      FatalError("performing query: ".mysql_error());
+      FatalError("performing query: ". $dbhand->error);
     } else return $result;
   }
 
@@ -186,12 +183,12 @@ current high scores.</p>
     else print "<p>$msg</p>\n\n";
   }
 
-  function CheckHostOverride(&$realhostname, $remoteIP) {
+  function CheckHostOverride($dbhand, &$realhostname, $remoteIP) {
     $hostname = $_REQUEST['hostname'];
     $password = $_REQUEST['password'];
     if ($password && $hostname) {
-      $result = dope_query("SELECT * FROM hostoverride WHERE Password='$password' AND HostName='$hostname'");
-      if (!(mysql_affected_rows())) {
+      $result = dope_query($dbhand, "SELECT * FROM hostoverride WHERE Password='$password' AND HostName='$hostname'");
+      if (!($dbhand->affected_rows)) {
         FatalError("Password and hostname do not match!");
       }
       $realhostname = $hostname;
@@ -212,14 +209,14 @@ current high scores.</p>
     return FALSE;
   }
 
-  function CheckHostNotOverridden($hostname) {
-    $result = dope_query("SELECT * FROM hostoverride WHERE HostName='$hostname'");
-    if (mysql_affected_rows()) {
+  function CheckHostNotOverridden($dbhand,$hostname) {
+    $result = dope_query($dbhand,"SELECT * FROM hostoverride WHERE HostName='$hostname'");
+    if ($dbhand->affected_rows) {
       FatalError("Host $hostname is password-protected - not updating server details");
     }
   }
 
-  function GetServerLocation(&$realhostname,&$remoteIP,&$proxyIP) {
+  function GetServerLocation($dbhand,&$realhostname,&$remoteIP,&$proxyIP) {
 
     $remoteIP = $_SERVER['REMOTE_ADDR'];
     $proxyIP = '';
@@ -234,15 +231,15 @@ current high scores.</p>
       else $remoteIP=$splitIPs[0];
     }
 
-    if (CheckHostOverride($realhostname, $remoteIP)) return;
+    if (CheckHostOverride($dbhand, $realhostname, $remoteIP)) return;
 
-    $result = dope_query("SELECT HostName FROM localdns WHERE IP='$remoteIP'");
-    $row=mysql_fetch_array($result);
+    $result = dope_query($dbhand, "SELECT HostName FROM localdns WHERE IP='$remoteIP'");
+    $row=$result->fetch_array();
     if ($row) $realhostname = $row['HostName'];
 
     if (!$realhostname) $realhostname=@gethostbyaddr($remoteIP);
 
-    CheckHostNotOverridden($realhostname);
+    CheckHostNotOverridden($dbhand,$realhostname);
   }
 
   function CheckServerConnect($HostName,$Port) {
@@ -262,12 +259,12 @@ current high scores.</p>
     }*/
   }
 
-  function ValidDynamicDNS() {
+  function ValidDynamicDNS($dbhand) {
     $hostname = $_REQUEST['hostname'];
     $password = $_REQUEST['password'];
     if ($hostname || !$password) return FALSE;
-    $result = dope_query("SELECT * FROM dynamicdns WHERE Password='$password'");
-    return (mysql_affected_rows()!=0);
+    $result = dope_query($dbhand, "SELECT * FROM dynamicdns WHERE Password='$password'");
+    return ($dbhand->affected_rows!=0);
   }
 
   function CheckValidProxy($oldproxyIP,$proxyIP,$HostName) {
@@ -302,23 +299,23 @@ current high scores.</p>
 
     PrintHTMLHeader("dopewars server registration");
 
-    GetServerLocation($HostName,$remoteIP,$proxyIP);
+    GetServerLocation($dbhand,$HostName,$remoteIP,$proxyIP);
     ValidateServerDetails($nm, $dt, $sc, $version, $comment, $hostname,
                           $password);
 
-    $validdyn=ValidDynamicDNS();
+    $validdyn=ValidDynamicDNS($dbhand);
     $port = $_REQUEST['port'];
 
     if ($validdyn) {
       PrintParagraph("Dynamic DNS password accepted");
-      $result = dope_query("SELECT ID,Credential,ProxyIP FROM servers,dynamicdns WHERE ServerID=ID AND Password='$password'");
+      $result = dope_query($dbhand, "SELECT ID,Credential,ProxyIP FROM servers,dynamicdns WHERE ServerID=ID AND Password='$password'");
     } else {
-      $result = dope_query("SELECT ID,Credential,ProxyIP FROM servers WHERE HostName='$HostName' AND Port='$port'");
+      $result = dope_query($dbhand, "SELECT ID,Credential,ProxyIP FROM servers WHERE HostName='$HostName' AND Port='$port'");
     }
-    $createnew=(mysql_affected_rows()==0);
+    $createnew=($dbhand->affected_rows==0);
 
     if (!$createnew) {
-      $row=mysql_fetch_array($result);
+      $row=$result->fetch_array();
       $serverID=$row['ID'];
       $credential=$row['Credential'];
       $oldproxyIP=$row['ProxyIP'];
@@ -331,9 +328,9 @@ current high scores.</p>
     if ($up==0) {
       if (!$createnew) {
         CheckCredential($credential);
-        dope_query("DELETE FROM servers WHERE ID='$serverID'");
-        dope_query("DELETE FROM highscores WHERE ServerID='$serverID'");
-        if ($validdyn) dope_query("UPDATE dynamicdns SET ServerID=NULL WHERE Password='$password'");
+        dope_query($dbhand, "DELETE FROM servers WHERE ID='$serverID'");
+        dope_query($dbhand, "DELETE FROM highscores WHERE ServerID='$serverID'");
+        if ($validdyn) dope_query($dbhand, "UPDATE dynamicdns SET ServerID=NULL WHERE Password='$password'");
       }
       return;
     }
@@ -360,38 +357,38 @@ current high scores.</p>
 
     if (!$createnew) $query .= "WHERE ID='$serverID'";
 
-    $result = dope_query($query);
+    $result = dope_query($dbhand, $query);
     if ($createnew) {
-      $serverID=mysql_insert_id();
-      if ($validdyn) dope_query("UPDATE dynamicdns SET ServerID='$serverID' WHERE Password='$password'");
+      $serverID=$dbhand->insert_id;
+      if ($validdyn) dope_query($dbhand, "UPDATE dynamicdns SET ServerID='$serverID' WHERE Password='$password'");
     }
 
     if (sizeof($nm)>0) {
-      $result = dope_query("DELETE FROM highscores WHERE ServerID='$serverID'");
+      $result = dope_query($dbhand, "DELETE FROM highscores WHERE ServerID='$serverID'");
     }
 
     for ($i=0;$i<$NUMHISCORES;$i++) if ($nm[$i]) {
-      $result = dope_query("INSERT INTO highscores SET Name='$nm[$i]', Date='$dt[$i]', Status='$st[$i]', Score='$sc[$i]', ServerID='$serverID', ID='$i'");
+      $result = dope_query($dbhand, "INSERT INTO highscores SET Name='$nm[$i]', Date='$dt[$i]', Status='$st[$i]', Score='$sc[$i]', ServerID='$serverID', ID='$i'");
     }
   }
 
   function ServerInfo($dbhand,$server) {
     PrintHTMLHeader("dopewars server $server");
-    $result = dope_query("SELECT Score, Date, Name, Status FROM servers,highscores WHERE serverID=servers.ID AND HostName='$server' ORDER BY highscores.ID");
+    $result = dope_query($dbhand, "SELECT Score, Date, Name, Status FROM servers,highscores WHERE serverID=servers.ID AND HostName='$server' ORDER BY highscores.ID");
 
 ?>
 
 <h3>Scores for multiplayer mode</h3>
 
 <?php
-    if (!(mysql_affected_rows())) {
+    if (!($dbhand->affected_rows)) {
       print "<p>No data available for this server - it has, most likely, gone down.</p>\n\n";
       return;
     }
 
     print "<table border=\"1\"><tr><th>Score</th><th>Date</th>\n";
     print "<th>Name</th><th>Status</th></tr>\n\n";
-    while (($row=mysql_fetch_array($result))) {
+    while (($row=$result->fetch_array())) {
       HTMLQuote($row['Score']);
       HTMLQuote($row['Name']);
       print "<tr>\n";
@@ -433,10 +430,11 @@ current high scores.</p>
   $my_password = $split[2];
 
 /* Open the database, and pass the handle to MainFunc */
-  $dbhand = @mysql_connect($my_server, $my_username, $my_password);
+  $dbhand = new mysqli($my_server, $my_username, $my_password,
+                       "d11128_metaserver");
   MainFunc($dbhand);
 
 /* Make sure that we don't leave any DB connections floating around */
-  mysql_close($dbhand);
+  $dbhand->close();
   unset($dbhand);
 ?>
