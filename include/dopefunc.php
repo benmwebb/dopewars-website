@@ -20,8 +20,8 @@
       'FAQ' => $DOCROOT.'faq.html',
       'Download' => $DOCROOT.'download.html',
       'Screenshots' => $DOCROOT.'screenshots/',
-      'Active servers' => 'http://dopewars.sourceforge.net/metaserver.php?getlist=2'.$mirrorID,
-      'SourceForge project page' => 'http://sourceforge.net/projects/dopewars/'
+      'Active servers' => 'https://dopewars.sourceforge.io/metaserver.php?getlist=2'.$mirrorID,
+      'SourceForge project page' => 'https://sourceforge.net/projects/dopewars/'
     );
     print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n";
     print "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\"\n";
@@ -54,7 +54,7 @@
   function WriteNavLinks() {
     global $DOCROOT,$mainpage,$mirrorID;
     $validlinks = array(
-      'Active servers' => 'http://dopewars.sourceforge.net/metaserver.php?getlist=2',$mirrorID,
+      'Active servers' => 'https://dopewars.sourceforge.io/metaserver.php?getlist=2',$mirrorID,
       'Screenshots' => $DOCROOT.'screenshots/'
     );
 
@@ -104,7 +104,7 @@
     print "  <a href=\"http://validator.w3.org/check/referer\">\n";
     print "    <img class=\"w3clink\" src=\"".$DOCROOT."valid-xhtml11.png\"".
           " alt=\"Valid XHTML 1.1\" />\n  </a>\n";
-    print "  <a href=\"http://sourceforge.net/projects/dopewars\">\n";
+    print "  <a href=\"https://sourceforge.net/projects/dopewars\">\n";
     print "    <img class=\"w3clink\" src=\"https://sflogo.sourceforge.net/" .
           "sflogo.php?group_id=11128&amp;type=12\"\n" .
           "     width=\"120\" height=\"30\"\n" .
@@ -128,7 +128,7 @@
  </caption>
 
  <tr>
-  <td><a href="http://dopewars.sourceforge.net/">
+  <td><a href="https://dopewars.sourceforge.io/">
   United States (dopewars.sourceforge.net)
   </a></td>
 
