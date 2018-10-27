@@ -93,6 +93,7 @@
     }
 
     /* $fileinfo[9] is stat.m_time (last modification time) */
+    date_default_timezone_set("UTC");
     $modtime = date("D M j G:i:s T Y",$fileinfo[9]);
   
     print "<address>\n";
