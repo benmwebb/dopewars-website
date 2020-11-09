@@ -103,29 +103,28 @@ FreeBSD port</a></p>
 <h2><a id="develop">Development versions</a></h2>
 <p>dopewars is in continual development, and so, to take advantage of
 new features, or to contribute to the code and/or translations, you can get
-the latest version of the code by
-<a href="http://sourceforge.net/docs/E09">Subversion</a> (SVN) from
-<a href="http://sourceforge.net/">SourceForge</a>. Be warned that this
+the latest version of the code using
+<a href="https://git-scm.com/">git</a> from
+<a href="https://github.com/benmwebb/dopewars">GitHub</a>. Be warned that this
 code may not be fully functional - that's why it's still in development!</p>
 
 <p>See <a href="http://svnbook.red-bean.com/">the O'Reilly book</a> for more
 details about using Subversion.</p>
 
 <p>To obtain the whole code from scratch, use the following command, which will
-extract the latest SVN version into the directory <tt>dopewars</tt> below your
+extract the latest git version into the directory <tt>dopewars</tt> below your
 current directory:</p>
 
-<pre class="unixcom">svn co https://dopewars.svn.sourceforge.net/svnroot/dopewars/dopewars/trunk dopewars</pre>
+<pre class="unixcom">git clone https://github.com/benmwebb/dopewars.git</pre>
 
-<p>If you already have a copy of the dopewars SVN and wish to bring it up to
+<p>If you already have a copy of the code and wish to bring it up to
 date, change into the <tt>dopewars</tt> directory and then run the following
 command:</p>
 
-<pre class="unixcom">svn up</pre>
+<pre class="unixcom">git pull</pre>
 
-<p><a href="mailto:benwebb@users.sf.net">Feedback</a> is, as always,
-appreciated, so that I can iron out any bugs in the code or configure script
-before the next "stable" release.</p>
+<p>If you find issues with the code or configure script, please
+<a href="https://github.com/benmwebb/dopewars/issues">open an issue</a>.</p>
 
 <h2>Old versions</h2>
 <p>If you desperately want them, all previous GPL versions of dopewars are also
