@@ -108,9 +108,6 @@ the latest version of the code using
 <a href="https://github.com/benmwebb/dopewars">GitHub</a>. Be warned that this
 code may not be fully functional - that's why it's still in development!</p>
 
-<p>See <a href="http://svnbook.red-bean.com/">the O'Reilly book</a> for more
-details about using Subversion.</p>
-
 <p>To obtain the whole code from scratch, use the following command, which will
 extract the latest git version into the directory <tt>dopewars</tt> below your
 current directory:</p>
