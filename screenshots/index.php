@@ -16,8 +16,8 @@
     )
   );
 
-  if (isset($_ENV['pic'])) {
-    $picparts = pathinfo($_ENV['pic']);
+  if (isset($argv[1])) {
+    $picparts = pathinfo($argv[1]);
     $pic = $picparts['basename'];
     $match='';
     if (substr($pic,-5)=='.html') $pic=substr($pic,0,-5);
