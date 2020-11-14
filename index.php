@@ -26,7 +26,7 @@ below 16 without parental supervision. We also do not condone real-life drug
 dealing.</p>
 
 <p>dopewars runs on Unix (e.g. Linux, Solaris, Mac OS X) systems and Win32
-(Windows 95, 98, NT, 2000, ME, XP).</p>
+(Windows 7 or later).</p>
 
 <p>A framework for writing AI clients for dopewars with
 <a href="http://www.perl.com/">Perl</a> (and a simple example client)
