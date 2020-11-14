@@ -45,21 +45,15 @@ greatly simplify the development of computerised dopewars players. The code is
 <h3>Support</h3>
 
 <p>If you have a question about dopewars, first check the
-<a href="faq.html">FAQ</a> to see if it's already answered there. Also,
-consider checking the
-<a href="http://sourceforge.net/projects/dopewars/">SourceForge</a> pages for
-the <a href="http://sourceforge.net/forum/forum.php?forum_id=34874">Open
-Discussion forum</a>, the
-<a href="http://sourceforge.net/forum/forum.php?forum_id=34875">Help forum</a>
-or the
-<a href="http://lists.sourceforge.net/mailman/listinfo/dopewars-devel">dopewars
-mailing list</a>.
-You can also email enquiries to me directly at
-<a href="mailto:benwebb@users.sf.net">benwebb@users.sf.net</a>.</p>
+<a href="faq.html">FAQ</a> to see if it's already answered there.
+Otherwise,
+<a href="https://github.com/benmwebb/dopewars/issues">open an issue</a>.</p>
 
 <p>If you discover a bug in the version you have, check the download page
-for a later version (or try the development code in CVS); chances are that the
-bug has already been reported and it's been fixed...</p>
+for a later version (or try the
+<a href="https://github.com/benmwebb/dopewars">development code at GitHub</a>); chances are that the bug has already been reported and it's been fixed.
+If not,
+<a href="https://github.com/benmwebb/dopewars/issues">open an issue</a>.</p>
 
 <?php WriteNavLinks(); ?>
 

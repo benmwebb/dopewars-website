@@ -212,24 +212,22 @@ Microsoft's <a href="http://www.microsoft.com/windows95/downloads/contents/WUAdm
 <p /></dd>
 
 <dt><a id="bug"><b>I've found a bug! Fix it please.</b></a></dt>
-<dd>Submit a bug report to the
-<a href="http://sourceforge.net/tracker/?atid=111128&amp;group_id=11128&amp;func=browse">
-SourceForge bug tracking system</a>. Make sure you leave details of the
+<dd><a href="https://github.com/benmwebb/dopewars/issues">Open an issue</a>.
+Make sure you leave details of the
 dopewars version you're using (e.g. 1.5.2) and your system (e.g. RedHat
-Linux 7.2, Windows XP). The more details you can give about how and when
-the bug occurred, the more likely that it can be fixed. Also make sure that
-you leave a contact address so that you can be contacted for more details if
+Linux 7.2, Windows 10). The more details you can give about how and when
+the bug occurred, the more likely that it can be fixed.
 necessary.
 <p /></dd>
 
 <dt><a id="feature"><b>Can you add <i>&lt;feature&gt;</i> ?.</b>
 </a></dt>
 <dd>dopewars is open source software, so there's nothing to stop you from
-getting the source code and adding the feature yourself! Alternatively, submit
-a feature request to the 
-<a href="http://sourceforge.net/tracker/?atid=361128&amp;group_id=11128&amp;func=browse">
-SourceForge feature request system</a>. This way, developers can keep track
-of all desired new features.
+getting the source code, adding the feature yourself, then submitting a
+<a href="https://github.com/benmwebb/dopewars/pulls">pull request</a>.
+Alternatively,
+<a href="https://github.com/benmwebb/dopewars/issues">open an issue</a>
+so that developers can keep track of all desired new features.
 <p /></dd>
 
 </dl>
