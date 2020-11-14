@@ -29,14 +29,14 @@ dealing.</p>
 (Windows 7 or later).</p>
 
 <p>A framework for writing AI clients for dopewars with
-<a href="http://www.perl.com/">Perl</a> (and a simple example client)
+<a href="https://www.perl.com/">Perl</a> (and a simple example client)
 is available courtesy of Dave Madison
 <a href="http://MarginalHacks.com/Hacks/dAIve/">here</a>. A version of
 dopewars which implements an improved AI, using a behaviour-based
 architecture, <a href="http://www.cs.nott.ac.uk/~esg/dopewars.html">is also
 available</a>.</p>
 
-<p>A version of dopewars written in <a href="http://www.python.org/">Python</a>
+<p>A version of dopewars written in <a href="https://www.python.org/">Python</a>
 is in development by Mike Meyer. The aim of this version is to enable dopewars
 to be run easily on other platforms (such as MacOS and Windows) and to
 greatly simplify the development of computerised dopewars players. The code is 
