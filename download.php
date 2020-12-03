@@ -91,15 +91,15 @@ FreeBSD port</a></p> -->
 <h3>Documentation etc.</h3>
 
 <p>Text documentation: &nbsp;
-   <a href="README">README</a>
+   <a href="https://github.com/benmwebb/dopewars/blob/master/README">README</a>
 </p>
 
 <p>List of changes in this and earlier versions (ChangeLog): &nbsp;
-   <a href="ChangeLog">ChangeLog</a>
+   <a href="https://github.com/benmwebb/dopewars/blob/master/ChangeLog">ChangeLog</a>
 </p>
 
 <p>Example configuration file for dopewars: &nbsp;
-   <a href="example-cfg">example-cfg</a>
+   <a href="https://github.com/benmwebb/dopewars/blob/master/doc/example-cfg">example-cfg</a>
 </p>
 
 <h2><a id="develop">Development versions</a></h2>
