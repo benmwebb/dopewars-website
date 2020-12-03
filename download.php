@@ -67,22 +67,24 @@ as the latest release.</i></p>
 <!-- <p><a href="http://lis.snv.jussieu.fr/~rousse/linux/plf/">Mandrake
 package</a></p> -->
 
-<p><a href="http://packages.debian.org/unstable/games/dopewars.html">Debian
+<p><a href="https://packages.debian.org/buster/dopewars">Debian
 package</a></p>
 
-<p><a href="http://pdb.finkproject.org/pdb/package.php/dopewars">Mac OS X
+<p>Homebrew (Mac OS): run <tt>brew install dopewars</tt></p>
+
+<p><a href="http://pdb.finkproject.org/pdb/package.php/dopewars">Mac OS
 (Fink) package</a></p>
 
 <!--
 <p><a href="http://www.lindows.com/products_details/product_1310.html">Lindows
 Click-N-Run package</a></p> -->
 
-<p><a href="http://www.freebsd.org/cgi/url.cgi?ports/games/dopewars/pkg-descr">
-FreeBSD port</a></p>
+<!-- <p><a href="http://www.freebsd.org/cgi/url.cgi?ports/games/dopewars/pkg-descr">
+FreeBSD port</a></p> -->
 
-<p><a href="ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/games/dopewars/README.html">NetBSD package</a></p>
+<p><a href="https://pkgsrc.se/games/dopewars">NetBSD package</a></p>
 
-<p><a href="http://www.openbsd.org/3.6_packages/i386/dopewars-1.5.7p2.tgz-long.html">OpenBSD i386 package</a></p>
+<p><a href="https://openports.se/games/dopewars">OpenBSD package</a></p>
 
 <p>Foresight Linux or Specifix Linux: run <tt>conary update dopewars</tt></p>
 
