@@ -20,7 +20,7 @@ depending on how often I bother to rebuild them... So check the version
 numbers!</p>
 
 <p>All RPMs are <a href="http://www.gnupg.org/">GnuPG</a> signed with
-<a href="http://dopewars.sourceforge.net/pubkey4.txt">this public key</a>.
+<a href="https://dopewars.sourceforge.io/pubkey4.txt">this public key</a>.
 GPG-signed SHA256 checksums of all downloadable material
 <?php Download("SHA256-1.6.0.txt.asc", "are also available"); ?>.
 </p>
@@ -33,7 +33,7 @@ GPG-signed SHA256 checksums of all downloadable material
 (just run this program, and it will install dopewars automatically for you;
 if you're worried about Internet Explorer's "security" warning, see the
 <a href="faq.html#windows">FAQ</a>, or check its
-<?php Download("SHA256-1.6.0.txt.asc", "checksum and GPG signature"); ?>).
+<?php Download("SHA256-1.6.0.txt.asc", "checksum and GPG signature");?>).
 </p>
 
 <h3>RedHat Enterprise Linux 7 (and similar)</h3>
