@@ -15,44 +15,50 @@ If you're running Fedora Core 4 on an Intel-based system, you can install
 dopewars by getting the relevant RPM(s) and reading the README file. If you
 don't have RPM or they don't install properly, grab the tarball instead.</p>
 
-<p>Latest stable version is <b>1.5.12</b>. The RPMs may be a little out of date,
+<p>Latest stable version is <b>1.6.0</b>. The RPMs may be a little out of date,
 depending on how often I bother to rebuild them... So check the version
 numbers!</p>
 
-<p>All RPMs are <a href="http://www.gnupg.org/">GnuPG</a> signed. My public
-key is available
-<a href="http://dopewars.sourceforge.net/pubkey.txt">here</a>.
-MD5 checksums of all downloadable material are also available
-<a href="http://dopewars.sourceforge.net/md5-1.5.12.txt">here</a>.
+<p>All RPMs are <a href="http://www.gnupg.org/">GnuPG</a> signed with
+<a href="http://dopewars.sourceforge.net/pubkey4.txt">this public key</a>.
+GPG-signed SHA256 checksums of all downloadable material
+<?php Download("SHA256-1.6.0.txt.asc", "are also available"); ?>.
 </p>
 
 <h3>Microsoft Windows</h3>
-<p>Windows installer (Win95, Win98, WinNT, Win2000, WinME, WinXP),
-version 1.5.12: &nbsp;
-<?php Download("dopewars-1.5.12.exe"); ?>
+<p>Windows installer (Windows 7 or later), version 1.6.0: &nbsp;
+<?php Download("dopewars-1.6.0-32bit.exe", "32-bit"); ?>; &nbsp;
+<?php Download("dopewars-1.6.0-64bit.exe", "64-bit"); ?>
 <br />
 (just run this program, and it will install dopewars automatically for you;
 if you're worried about Internet Explorer's "security" warning, see the
 <a href="faq.html#windows">FAQ</a>, or check its
-<?php Download("dopewars-1.5.12.exe.gpg", "GPG signature"); ?>
+<?php Download("SHA256-1.6.0.txt.asc", "checksum and GPG signature"); ?>).
 </p>
 
-<h3>RedHat Linux (and similar)</h3>
-<p>Binary RPM for Fedora Core 4/Intel, version 1.5.12: &nbsp;
-<?php Download("dopewars-1.5.12-1.i386.rpm"); ?>
+<h3>RedHat Enterprise Linux 7 (and similar)</h3>
+<p>Binary RPM for 64-bit RedHat Enterprise 7, version 1.6.0: &nbsp;
+<?php Download("dopewars-1.6.0-1.el7.x86_64.rpm"); ?>
 <br />
 SDL_mixer (Simple DirectMedia Layer) sound plugin: &nbsp;
-<?php Download("dopewars-sdl-1.5.12-1.i386.rpm"); ?>
+<?php Download("dopewars-sdl-1.6.0-1.el7.x86_64.rpm"); ?>
+</p>
+
+<h3>Fedora Linux 33 (and similar)</h3>
+<p>Binary RPM for 64-bit Fedora 33, version 1.6.0: &nbsp;
+<?php Download("dopewars-1.6.0-1.fc33.x86_64.rpm"); ?>
+<br />
+SDL_mixer (Simple DirectMedia Layer) sound plugin: &nbsp;
+<?php Download("dopewars-sdl-1.6.0-1.fc33.x86_64.rpm"); ?>
 </p>
 
 <h3>Source code</h3>
-<p>Source RPM, version 1.5.12: &nbsp;
-<?php Download("dopewars-1.5.12-1.src.rpm"); ?>
+<p>Source RPM, version 1.6.0: &nbsp;
+<?php Download("dopewars-1.6.0-1.el7.src.rpm"); ?>
 </p>
 
-<p>Source code tarball, version 1.5.12: &nbsp;
-<?php Download("dopewars-1.5.12.tar.gz"); ?>
-<?php Download("dopewars-1.5.12.tar.gz.gpg", "(GPG)"); ?>
+<p>Source code tarball, version 1.6.0: &nbsp;
+<?php Download("dopewars-1.6.0.tar.gz"); ?>
 </p>
 
 <h3>Other Linux/Unix</h3>
@@ -128,7 +134,7 @@ command:</p>
 <h2>Old versions</h2>
 <p>If you desperately want them, all previous GPL versions of dopewars are also
 available, mainly at the <a
-href="http://sourceforge.net/project/showfiles.php?group_id=11128">SourceForge
+href="https://sourceforge.net/projects/dopewars/files/dopewars/">SourceForge
 files page</a>. Very old versions are also available below. N.B. It is not
 recommended to use these versions for anything other than testing - they all
 contain bugs, including some severe security problems!</p>

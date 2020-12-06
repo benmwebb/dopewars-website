@@ -8,5 +8,5 @@
   if (!isset($DOCROOT)) $DOCROOT="/";
 
   /* Root directory for downloads */
-  $dnlroot = "http://prdownloads.sourceforge.net/dopewars/";
+  $dnlroot = "https://sourceforge.net/projects/dopewars/files/dopewars/1.6.0";
 ?>
