@@ -11,9 +11,10 @@
 
 <p>dopewars should compile on practically any UNIX system which has the
 (n)curses library. It can also be compiled on Windows systems; see below.
-If you're running Fedora Core 4 on an Intel-based system, you can install
-dopewars by getting the relevant RPM(s) and reading the README file. If you
-don't have RPM or they don't install properly, grab the tarball instead.</p>
+If you're running Fedora or RedHat Linux on an Intel-based system, you can
+install dopewars by getting the relevant RPM(s) and reading the README file.
+If you don't have RPM or they don't install properly, grab the tarball or
+install a 3rd-party maintained package instead.</p>
 
 <p>Latest stable version is <b>1.6.0</b>. The RPMs may be a little out of date,
 depending on how often I bother to rebuild them... So check the version
