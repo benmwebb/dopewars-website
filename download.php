@@ -67,31 +67,17 @@ SDL_mixer (Simple DirectMedia Layer) sound plugin: &nbsp;
 <p><i>These packages are built by third parties, and so may not be as up to date
 as the latest release.</i></p>
 
-<p>
-<?php Download("dopewars-1.5.2-slackware.tar.gz","Slackware package"); ?>
-</p>
-
-<!-- <p><a href="http://lis.snv.jussieu.fr/~rousse/linux/plf/">Mandrake
-package</a></p> -->
-
-<p><a href="https://packages.debian.org/buster/dopewars">Debian
-package</a></p>
+<p><a href="https://packages.debian.org/buster/dopewars">Debian/Ubuntu
+package</a> ("<tt>apt install dopewars</tt>")</p>
 
 <p>Homebrew (Mac OS): run <tt>brew install dopewars</tt></p>
-
-<p><a href="http://pdb.finkproject.org/pdb/package.php/dopewars">Mac OS
-(Fink) package</a></p>
-
-<!--
-<p><a href="http://www.lindows.com/products_details/product_1310.html">Lindows
-Click-N-Run package</a></p> -->
-
-<!-- <p><a href="http://www.freebsd.org/cgi/url.cgi?ports/games/dopewars/pkg-descr">
-FreeBSD port</a></p> -->
 
 <p><a href="https://pkgsrc.se/games/dopewars">NetBSD package</a></p>
 
 <p><a href="https://openports.se/games/dopewars">OpenBSD package</a></p>
+
+<p><a href="http://pdb.finkproject.org/pdb/package.php/dopewars">Mac OS
+(Fink) package</a></p>
 
 <p>Foresight Linux or Specifix Linux: run <tt>conary update dopewars</tt></p>
 
