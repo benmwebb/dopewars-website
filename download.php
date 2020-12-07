@@ -79,8 +79,6 @@ package</a> ("<tt>apt install dopewars</tt>")</p>
 <p><a href="http://pdb.finkproject.org/pdb/package.php/dopewars">Mac OS
 (Fink) package</a></p>
 
-<p>Foresight Linux or Specifix Linux: run <tt>conary update dopewars</tt></p>
-
 <h3>Documentation etc.</h3>
 
 <p>Text documentation: &nbsp;
