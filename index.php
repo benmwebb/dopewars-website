@@ -1,14 +1,14 @@
 <?php
   include "include/dopefunc.php";
-  StartHTML("dopewars-1.6.0","Main Index");
+  StartHTML("dopewars-1.6.1","Main Index");
 ?>
 
 <h2>Make a fortune dealing drugs on the streets of New York...</h2>
 
-<h3><a href="news.html">NEWS</a>: Version 1.6.0 is now available! This release
-fixes the metaserver, which has been broken since SourceForge moved to HTTPS.
-It also adds support for modern 64-bit operating systems, and newer software
-libraries such as GTK+3 and SDL 2.
+<h3><a href="news.html">NEWS</a>: Version 1.6.1 is now available! This release
+improves the appearance of the text-mode client, adds a British English
+translation, and fixes a bug selecting sounds from the options dialog
+of the Windows client.
 Get it from the <a href="download.html">download page</a>.
 </h3>
 

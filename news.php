@@ -4,6 +4,12 @@
 ?>
 
 <dl>
+<dt><b>11th December 2020</b></dt>
+<dd>dopewars-1.6.1 released. This release improves the appearance of the
+text-mode client, adds a British English translation, and fixes a bug
+selecting sounds from the options dialog of the Windows client.
+<p /></dd>
+
 <dt><b>6th December 2020</b></dt>
 <dd>dopewars-1.6.0 released. This release fixes the metaserver, which has been
 broken since SourceForge moved to HTTPS. It also adds support for modern
