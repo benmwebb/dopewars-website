@@ -82,11 +82,11 @@ package</a> ("<tt>apt install dopewars</tt>")</p>
 <h3>Documentation etc.</h3>
 
 <p>Text documentation: &nbsp;
-   <a href="https://github.com/benmwebb/dopewars/blob/master/README">README</a>
+   <a href="https://github.com/benmwebb/dopewars/blob/master/README.md">README.md</a>
 </p>
 
 <p>List of changes in this and earlier versions (ChangeLog): &nbsp;
-   <a href="https://github.com/benmwebb/dopewars/blob/master/ChangeLog">ChangeLog</a>
+   <a href="https://github.com/benmwebb/dopewars/blob/master/ChangeLog.md">ChangeLog.md</a>
 </p>
 
 <p>Example configuration file for dopewars: &nbsp;
