@@ -5,7 +5,7 @@
   function Download($url,$name='') {
     global $dnlroot;  /* Server where the files are stored - passed in */
     if ($name=='') $name = $url;
-    print "   <a href=\"$dnlroot$url\">$name</a>\n";
+    print "<a href=\"$dnlroot$url\">$name</a>";
   }
 ?>
 
@@ -34,7 +34,7 @@ GPG-signed SHA256 checksums of all downloadable material
 (just run this program, and it will install dopewars automatically for you;
 if you're worried about Internet Explorer's "security" warning, see the
 <a href="faq.html#windows">FAQ</a>, or check its
-<?php Download("SHA256-1.6.1.txt.asc", "checksum and GPG signature");?>).
+<?php Download("SHA256-1.6.1.txt.asc", "checksum and GPG signature"); ?>).
 </p>
 
 <h3>RedHat Enterprise Linux 7 (and similar)</h3>
