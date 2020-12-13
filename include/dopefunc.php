@@ -78,10 +78,9 @@
     print "\n</p>\n\n";
   }
 
-  function EndHTML($subdir='') {
+  function EndHTML($subdir='', $sourcefile='') {
     global $DOCROOT;
 
-    $sourcefile = "";
     if (!$sourcefile and isset($_SERVER['PATH_TRANSLATED'])) {
       $sourcefile = $_SERVER['PATH_TRANSLATED'];
     }
