@@ -31,6 +31,7 @@
     print "  <meta charset=\"utf-8\">\n";
     print "  <link rel=\"stylesheet\" type=\"text/css\" ".
           "href=\"".$DOCROOT."dopewars.css\" />\n";
+    print " <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.6.3/css/all.css\" integrity=\"sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/\" crossorigin=\"anonymous\" />\n";
     print "  <link rel=\"made\" type=\"text/html\" ".
           "href=\"mailto:benwebb@users.sf.net\" />\n";
     print "  <title>$title</title>\n";
@@ -77,7 +78,7 @@
     print "\n</p>\n\n";
   }
 
-  function EndHTML($sourcefile='') {
+  function EndHTML($subdir='') {
     global $DOCROOT;
 
     if (!$sourcefile and isset($_SERVER['PATH_TRANSLATED'])) {
@@ -96,6 +97,12 @@
     /* $fileinfo[9] is stat.m_time (last modification time) */
     date_default_timezone_set("UTC");
     $modtime = date("D M j G:i:s T Y",$fileinfo[9]);
+
+    if ($subdir != "") {
+      $github = $subdir . "/" . basename($sourcefile);
+    } else {
+      $github = basename($sourcefile);
+    }
   
     print "<address>\n";
     print "  <a href=\"http://jigsaw.w3.org/css-validator/check/referer\">\n";
@@ -111,6 +118,9 @@
           "      alt=\"Fast, secure and Free Open Source software " .
           "downloads\" />";
     print "  </a>\n";
+    print "  <div class=\"editlink\">\n";
+    print "    <a class=\"editlink\" href=\"https://github.com/benmwebb/dopewars-website/blob/master/" . $github . "\"><i class=\"fab fa-github\"></i> Edit on GitHub</a>\n";
+    print "  </div>\n";
 
     print "  Written by <a href=\"mailto:benwebb@users.sf.net\">".
           "Ben Webb</a><br />\n";

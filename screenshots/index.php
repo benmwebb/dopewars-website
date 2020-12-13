@@ -31,7 +31,7 @@
       print "<h2>$match</h2>\n\n";
       print "<p><img src=\"$pic.png\" alt=\"$match\" /></p>\n\n";
       WriteNavLinks("Screenshots",$category);
-      EndHTML();
+      EndHTML("screenshots");
     } else {
       print "<p>Error - invalid picture $pic</p>\n\n";
     }
@@ -55,6 +55,6 @@
     print "</ul>\n\n";
 
     WriteNavLinks("Screenshots");
-    EndHTML();
+    EndHTML("screenshots");
   }
 ?>
