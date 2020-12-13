@@ -21,7 +21,8 @@
       'Download' => $DOCROOT.'download.html',
       'Screenshots' => $DOCROOT.'screenshots/',
       'Active servers' => 'https://dopewars.sourceforge.io/metaserver.php?getlist=2'.$mirrorID,
-      'SourceForge project page' => 'https://sourceforge.net/projects/dopewars/'
+      'SourceForge project page' => 'https://sourceforge.net/projects/dopewars/',
+      'GitHub' => 'https://github.com/benmwebb/dopewars'
     );
     print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n";
     print "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\"\n";
