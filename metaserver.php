@@ -78,8 +78,10 @@ maintainer.</p>
 
 <p>To prevent your server announcing itself to the outside world, add the
 line "MetaServer.Active=0" (without the quotes) to your dopewars configuration
-file (/etc/dopewars or ~/.dopewars) or run the server with the <b>-S</b>
-command line option rather than <b>-s</b>.</p>
+file (<tt>/etc/dopewars</tt> or <tt>~/.dopewars</tt> on Linux/Mac/Unix,
+<tt>C:\Users\user\AppData\Local\dopewars\dopewars-config.txt</tt> on Windows)
+or run the server with the <b>-S</b> command line option rather than
+<b>-s</b>.</p>
 
 <p>Please note that all servers are checked for service; those that are
 unreachable or refuse connection will be removed from this list.</p>
