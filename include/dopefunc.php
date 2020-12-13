@@ -81,6 +81,7 @@
   function EndHTML($subdir='') {
     global $DOCROOT;
 
+    $sourcefile = "";
     if (!$sourcefile and isset($_SERVER['PATH_TRANSLATED'])) {
       $sourcefile = $_SERVER['PATH_TRANSLATED'];
     }
