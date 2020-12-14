@@ -23,8 +23,6 @@ can you add them?</a></li>
 talk to other players! I'm using the latest RPM.</a></li>
 <li><a href="#glib">Do I <i>really</i> need GLib to build dopewars from
 the source code? I just want to use the text-mode client.</a></li>
-<li><a href="#winsock">I keep getting a "Cannot Initialize WinSock" error on
-Windows 95 - how do I fix it?</a></li>
 <li><a href="#bug">I've found a bug! Fix it please.</a></li>
 <li><a href="#feature">Can you add <i>&lt;feature&gt;</i> ?.</a></li>
 </ul>
@@ -202,13 +200,6 @@ it's a general purpose utility library. dopewars uses it for string handling,
 config file parsing, memory allocation, error handling, logging, list types,
 Windows/Unix portability, and Unicode support. So yes, you do need it!
 It's not a particularly big library, anyway.
-<p /></dd>
-
-<dt><a id="winsock"><b>I keep getting a "Cannot Initialize
-WinSock" error on Windows 95 - how do I fix it?</b></a></dt>
-<dd>This is a problem with Windows 95, not dopewars. Windows 98 should work
-just fine! Alternatively, you can download a Windows Sockets update from 
-Microsoft's <a href="http://www.microsoft.com/windows95/downloads/contents/WUAdminTools/S_WUNetworkingTools/W95Sockets2/">Windows Update</a> page.
 <p /></dd>
 
 <dt><a id="bug"><b>I've found a bug! Fix it please.</b></a></dt>
