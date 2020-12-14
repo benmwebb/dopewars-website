@@ -34,8 +34,7 @@ Windows 95 - how do I fix it?</a></li>
 for?</b></a></dt>
 <dd>dopewars was originally developed on a RedHat Linux box, and should be
 portable to most flavours of Unix. It will also run under Win32 systems
-(Windows 95, Windows 98, Windows NT and Windows 2000). See also
-<a href="#platform">this other FAQ.</a><p /></dd>
+(Windows 7 or later). See also <a href="#platform">this other FAQ.</a><p /></dd>
 
 <dt><a id="depend"><b>What other packages do I need to install
 dopewars?</b></a></dt>
