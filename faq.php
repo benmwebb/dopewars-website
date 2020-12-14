@@ -44,8 +44,9 @@ text-mode client on Unix machines, the <b>curses</b> library is
 required (although the similar <b>ncurses</b> and <b>cur_colr</b>
 libraries should work just fine). To use the graphical
 <a href="http://www.gtk.org/">GTK+</a> client on Unix machines, the GTK+
-libraries are required. No libraries other than GLib are required on Win32
-platforms.<p /></dd>
+libraries are required. To use multi-player dopewars, you'll need the
+<a href="https://curl.se/download.html">curl</a> library. No libraries other
+than GLib and curl are required on Win32 platforms.<p /></dd>
 
 <dt><a id="help"><b>I want to help out. What can I do?</b></a></dt>
 <dd>Even if you're not a programmer, there are lots of things that you can
