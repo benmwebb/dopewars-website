@@ -29,10 +29,10 @@
     print " \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n\n";
     print "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\">\n\n";
     print "<head>\n";
-    print "  <meta charset=\"utf-8\">\n";
+    print "  <meta charset=\"utf-8\" />\n";
     print "  <link rel=\"stylesheet\" type=\"text/css\" ".
           "href=\"".$DOCROOT."dopewars.css\" />\n";
-    print " <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.6.3/css/all.css\" integrity=\"sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/\" crossorigin=\"anonymous\" />\n";
+    print "  <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.6.3/css/all.css\" integrity=\"sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/\" crossorigin=\"anonymous\" />\n";
     print "  <link rel=\"made\" type=\"text/html\" ".
           "href=\"mailto:benwebb@users.sf.net\" />\n";
     print "  <title>$title</title>\n";
@@ -119,9 +119,9 @@
           "      alt=\"Fast, secure and Free Open Source software " .
           "downloads\" />";
     print "  </a>\n";
-    print "  <div class=\"editlink\">\n";
+    print "  <span class=\"editlink\">\n";
     print "    <a class=\"editlink\" href=\"https://github.com/benmwebb/dopewars-website/blob/master/" . $github . "\"><i class=\"fab fa-github\"></i> Edit on GitHub</a>\n";
-    print "  </div>\n";
+    print "  </span>\n";
 
     print "  Written by <a href=\"mailto:benwebb@users.sf.net\">".
           "Ben Webb</a><br />\n";

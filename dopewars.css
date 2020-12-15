@@ -25,7 +25,7 @@ table.mirrors { width: 100%;
 /* Used for stuff to type in at a shell prompt */
 pre.unixcom   { margin-left: 1cm }
 
-div.editlink {
+span.editlink {
   font-size: 13px;
   font-family: "Lucida Grande","Geneva","Helvetica",Arial,sans-serif;
   font-weight: bold;
