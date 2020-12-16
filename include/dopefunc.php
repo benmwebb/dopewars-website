@@ -1,9 +1,7 @@
 <?php
 /* Functions for PHP-generated dopewars pages */
 
-  if (isset($mirror) && $mirror=='UK') {
-    $DOCROOT='http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/';
-  } else unset($DOCROOT);
+  unset($DOCROOT);
 
   include "local.php";
 
@@ -128,28 +126,6 @@
           "Ben Webb</a><br />\n";
     print " This page last updated: $modtime\n";
     print "</address>\n\n</body>\n\n</html>\n";
-  }
-
-  function ListMirrors() {
-?>
-<table class="mirrors" border="0" cellpadding="10">
- <caption>
- <a id="mirrors">
-   Please use the mirror site that is closer to you:
- </a>
- </caption>
-
- <tr>
-  <td><a href="https://dopewars.sourceforge.io/">
-  United States (dopewars.sourceforge.net)
-  </a></td>
-
-  <td><a href="http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/">
-  England, UK (bellatrix.pcl.ox.ac.uk)</a></td>
- </tr>
-</table>
-<?php
-    
   }
 
 ?>
