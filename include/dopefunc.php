@@ -100,16 +100,17 @@
     $modtime = date("D M j G:i:s T Y",$fileinfo[9]);
 
     if ($subdir != "") {
-      $github = $subdir . "/" . basename($sourcefile);
+      $fullpath = $subdir . "/" . basename($sourcefile);
     } else {
-      $github = basename($sourcefile);
+      $fullpath = basename($sourcefile);
     }
+    $uri = "https://dopewars.sourceforge.io/ " . $fullpath;
   
     print "<address>\n";
-    print "  <a href=\"http://jigsaw.w3.org/css-validator/check/referer\">\n";
+    print "  <a href=\"https://jigsaw.w3.org/css-validator/validator?uri=$uri\">\n";
     print "    <img class=\"w3clink\" src=\"".$DOCROOT."valid-css.png\"".
           " alt=\"Valid CSS\" />\n  </a>\n";
-    print "  <a href=\"http://validator.w3.org/check/referer\">\n";
+    print "  <a href=\"https://validator.w3.org/check?uri=$uri\">\n";
     print "    <img class=\"w3clink\" src=\"".$DOCROOT."valid-xhtml11.png\"".
           " alt=\"Valid XHTML 1.1\" />\n  </a>\n";
     print "  <a href=\"https://sourceforge.net/projects/dopewars\">\n";
@@ -120,7 +121,7 @@
           "downloads\" />";
     print "  </a>\n";
     print "  <span class=\"editlink\">\n";
-    print "    <a class=\"editlink\" href=\"https://github.com/benmwebb/dopewars-website/blob/master/" . $github . "\"><i class=\"fab fa-github\"></i> Edit on GitHub</a>\n";
+    print "    <a class=\"editlink\" href=\"https://github.com/benmwebb/dopewars-website/blob/master/" . $fullpath . "\"><i class=\"fab fa-github\"></i> Edit on GitHub</a>\n";
     print "  </span>\n";
 
     print "  Written by <a href=\"mailto:benwebb@users.sf.net\">".
