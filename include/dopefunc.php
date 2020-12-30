@@ -119,7 +119,7 @@
           "downloads\" />";
     print "  </a>\n";
     print "  <span class=\"editlink\">\n";
-    print "    <a class=\"editlink\" href=\"https://github.com/benmwebb/dopewars-website/blob/master/" . $fullpath . "\"><i class=\"fab fa-github\"></i> Edit on GitHub</a>\n";
+    print "    <a class=\"editlink\" href=\"https://github.com/benmwebb/dopewars-website/blob/main/" . $fullpath . "\"><i class=\"fab fa-github\"></i> Edit on GitHub</a>\n";
     print "  </span>\n";
 
     print "  Written by <a href=\"mailto:benwebb@users.sf.net\">".
