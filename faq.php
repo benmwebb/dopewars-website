@@ -225,5 +225,5 @@ so that developers can keep track of all desired new features.
 
 <?php
   WriteNavLinks("FAQ");
-  EndHTML();
+  EndHTML("faq.html");
 ?>

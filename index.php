@@ -59,4 +59,4 @@ If not,
 
 <?php WriteNavLinks(); ?>
 
-<?php EndHTML(); ?>
+<?php EndHTML(""); ?>

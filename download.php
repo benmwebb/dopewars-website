@@ -151,5 +151,5 @@ contain bugs, including some severe security problems!</p>
 
 <?php
   WriteNavLinks("Download");
-  EndHTML();
+  EndHTML("download.html");
 ?>

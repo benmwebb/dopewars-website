@@ -77,7 +77,7 @@
     print "\n</p>\n\n";
   }
 
-  function EndHTML($subdir='', $sourcefile='') {
+  function EndHTML($outfile, $subdir='', $sourcefile='') {
     global $DOCROOT;
 
     if (!$sourcefile and isset($_SERVER['PATH_TRANSLATED'])) {
@@ -102,7 +102,7 @@
     } else {
       $fullpath = basename($sourcefile);
     }
-    $uri = "https://dopewars.sourceforge.io/ " . $fullpath;
+    $uri = "https://dopewars.sourceforge.io/" . $outfile;
   
     print "<address>\n";
     print "  <a href=\"https://jigsaw.w3.org/css-validator/validator?uri=$uri\">\n";

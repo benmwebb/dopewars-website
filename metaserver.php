@@ -422,7 +422,7 @@ current high scores.</p>
     if ($servername) WriteNavLinks("Active servers",$servername);
     else WriteNavLinks("Active servers");
 
-    EndHTML("", "metaserver.php");
+    EndHTML("metaserver.php", "", "metaserver.php");
   }
 
 ?>

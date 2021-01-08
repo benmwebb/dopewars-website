@@ -192,5 +192,5 @@ doing "real" work!<p /></dd>
 
 <?php
   WriteNavLinks("News");
-  EndHTML();
+  EndHTML("news.html");
 ?>
