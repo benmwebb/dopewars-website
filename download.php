@@ -76,6 +76,8 @@ package</a> ("<tt>apt install dopewars</tt>")</p>
 
 <p><a href="https://openports.se/games/dopewars">OpenBSD package</a></p>
 
+<p><a href="https://www.haiku-os.org/">Haiku</a>: run <tt>pkgman install dopewars</tt></p>
+
 <p><a href="http://pdb.finkproject.org/pdb/package.php/dopewars">Mac OS
 (Fink) package</a></p>
 
