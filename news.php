@@ -4,6 +4,11 @@
 ?>
 
 <dl>
+<dt><b>26th June 2022</b></dt>
+<dd>dopewars-1.6.2 released. This release improves Unicode support in the
+text-mode client, and adds support for networking on the Haiku operating system.
+<p /></dd>
+
 <dt><b>11th December 2020</b></dt>
 <dd>dopewars-1.6.1 released. This release improves the appearance of the
 text-mode client, adds a British English translation, and fixes a bug
