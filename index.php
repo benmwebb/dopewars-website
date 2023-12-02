@@ -37,12 +37,6 @@ dopewars which implements an improved AI, using a behaviour-based
 architecture, <a href="http://www.cs.nott.ac.uk/~esg/dopewars.html">is also
 available</a>.</p>
 
-<p>A version of dopewars written in <a href="https://www.python.org/">Python</a>
-is in development by Mike Meyer. The aim of this version is to enable dopewars
-to be run easily on other platforms (such as MacOS and Windows) and to
-greatly simplify the development of computerised dopewars players. The code is 
-<a href="http://www.mired.org/home/mwm/wars/">freely available</a>.</p>
-
 <h3>Support</h3>
 
 <p>If you have a question about dopewars, first check the
