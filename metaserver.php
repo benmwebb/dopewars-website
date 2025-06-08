@@ -175,9 +175,9 @@ current high scores.</p>
     MyAddSlashes($password);
   }
 
-/* Escape quote characters etc. if magic quotes are _not_ being used */
+/* Escape quote characters etc. */
   function MyAddSlashes(&$str) {
-    if (!get_magic_quotes_gpc()) $str=addslashes($str);
+    $str=addslashes($str);
   }
 
   function FatalError($msg) {
@@ -370,7 +370,7 @@ current high scores.</p>
       if ($validdyn) dope_query($dbhand, "UPDATE dynamicdns SET ServerID='$serverID' WHERE Password='$password'");
     }
 
-    if (sizeof($nm)>0) {
+    if (!is_null($nm) && sizeof($nm)>0) {
       $result = dope_query($dbhand, "DELETE FROM highscores WHERE ServerID='$serverID'");
     }
 
