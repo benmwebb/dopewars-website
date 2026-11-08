@@ -505,7 +505,7 @@ const OUTRO_HTML = `
      width="120" height="30"
       alt="Fast, secure and Free Open Source software downloads" />  </a>
   <span class="editlink">
-    <a class="editlink" href="https://github.com/benmwebb/dopewars-website/blob/main/metaserver.php"><i class="fab fa-github"></i> Edit on GitHub</a>
+    <a class="editlink" href="https://github.com/benmwebb/dopewars-website/blob/main/cloudflare/src/index.js"><i class="fab fa-github"></i> Edit on GitHub</a>
   </span>
   Written by <a href="mailto:benwebb@users.sf.net">Ben Webb</a><br />
 </address>
