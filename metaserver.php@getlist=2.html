@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+ "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="dopewars.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+  <link rel="made" type="text/html" href="mailto:benwebb@users.sf.net" />
+  <title>Active dopewars servers</title>
+</head>
+
+<body>
+<p class="sitelinks">
+  <a href="index.html">Main Index</a> *
+  <a href="news.html">News</a> *
+  <a href="docs/index.html">Documentation</a> *
+  <a href="faq.html">FAQ</a> *
+  <a href="download.html">Download</a> *
+  <a href="screenshots/index.html">Screenshots</a> *
+  Active servers *
+  <a href="https://sourceforge.net/projects/dopewars/">SourceForge project page</a> *
+  <a href="https://github.com/benmwebb/dopewars">GitHub</a>
+</p>
+
+<h1>Active dopewars servers</h1>
+
+<p><i>The dopewars metaserver has moved. To use the metaserver, edit your
+dopewars configuration file and add</i><br />
+<tt><b>MetaServer.URL="https://metaserver.dopewars.workers.dev/"</b></tt></p>
+
+<p>dopewars incorporates limited multiplayer capabilities, with a server
+mode (the -s switch). The metaserver (list of active servers) is maintained
+automatically, providing that you're running a server of version 1.5.1 or
+above. In some cases (usually
+if you're connecting via a proxy) the metaserver may report your domain
+name incorrectly, or refuse connection entirely; see the
+<a href="docs/metaserver.html">metaserver</a>
+page for tips on fixing this problem. Additional problems can usually be solved
+by <a href="mailto:benwebb@users.sf.net">emailing</a> the metaserver
+maintainer.</p>
+
+<p>To prevent your server announcing itself to the outside world, add the
+line "MetaServer.Active=0" (without the quotes) to your dopewars configuration
+file (<tt>/etc/dopewars</tt> or <tt>~/.dopewars</tt> on Linux/Mac/Unix,
+<tt>C:\Users\user\AppData\Local\dopewars\dopewars-config.txt</tt> on Windows)
+or run the server with the <b>-S</b> command line option rather than
+<b>-s</b>.</p>
+
+<p>Please note that all servers are checked for service; those that are
+unreachable or refuse connection will be removed from the metaserver.</p>
+
+<p class="navlinks">
+  <a href="index.html">Main Index</a> :
+    Active servers
+</p>
+
+<address>
+  <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://dopewars.sourceforge.io/metaserver.php">
+    <img class="w3clink" src="valid-css.png" alt="Valid CSS" />
+  </a>
+  <a href="https://validator.w3.org/check?uri=https://dopewars.sourceforge.io/metaserver.php">
+    <img class="w3clink" src="valid-xhtml11.png" alt="Valid XHTML 1.1" />
+  </a>
+  <a href="https://sourceforge.net/projects/dopewars">
+    <img class="w3clink" src="https://sflogo.sourceforge.net/sflogo.php?group_id=11128&amp;type=12"
+     width="120" height="30"
+      alt="Fast, secure and Free Open Source software downloads" />  </a>
+  <span class="editlink">
+    <a class="editlink" href="https://github.com/benmwebb/dopewars-website/blob/main/metaserver.php"><i class="fab fa-github"></i> Edit on GitHub</a>
+  </span>
+  Written by <a href="mailto:benwebb@users.sf.net">Ben Webb</a><br />
+ This page last updated: Sun Nov  8 02:01:12 UTC 2026
+</address>
+
+</body>
+
+</html>
