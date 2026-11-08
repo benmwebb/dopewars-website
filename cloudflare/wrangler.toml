@@ -1,0 +1,8 @@
+name = "metaserver"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "metaserver"
+database_id = "5da93de1-f365-4932-8d9b-8fda3e718f84"

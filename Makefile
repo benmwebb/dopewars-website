@@ -1,6 +1,6 @@
 WEB=${WEBTOP}
 FILES=${WEB}/index.html ${WEB}/download.html ${WEB}/faq.html ${WEB}/news.html \
-      ${WEB}/dopewars.css ${WEB}/metaserver.php
+      ${WEB}/dopewars.css
 TOPDIR=.
 SUBDIRS=screenshots include
 
