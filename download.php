@@ -21,7 +21,7 @@ depending on how often I bother to rebuild them... So check the version
 numbers!</p>
 
 <p>All RPMs are <a href="http://www.gnupg.org/">GnuPG</a> signed with
-<a href="https://dopewars.sourceforge.io/pubkey4.txt">this public key</a>.
+<a href="https://dopewars.sourceforge.io/pubkey256.txt">this public key</a>.
 GPG-signed SHA256 checksums of all downloadable material
 <?php Download("SHA256-1.7.0.txt.asc", "are also available"); ?>.
 </p>
