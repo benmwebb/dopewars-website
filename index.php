@@ -1,13 +1,13 @@
 <?php
   include "include/dopefunc.php";
-  StartHTML("dopewars-1.6.2","Main Index");
+  StartHTML("dopewars-1.7.0","Main Index");
 ?>
 
 <h2>Make a fortune dealing drugs on the streets of New York...</h2>
 
-<h3><a href="news.html">NEWS</a>: Version 1.6.2 is now available! This release
-improves Unicode support in the text-mode client, and adds support for
-networking on the Haiku operating system.
+<h3><a href="news.html">NEWS</a>: Version 1.7.0 is now available! This release
+adds support for GTK4, adds a Swedish translation, moves the config file to a
+new location, and moves the metaserver away from SourceForge.
 Get it from the <a href="download.html">download page</a>.
 </h3>
 

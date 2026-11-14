@@ -4,6 +4,12 @@
 ?>
 
 <dl>
+<dt><b>14th November 2026</b></dt>
+<dd>dopewars-1.7.0 released. This release adds support for GTK4, adds a
+Swedish translation, moves the config file to a new location, and moves the
+metaserver away from SourceForge.
+<p /></dd>
+
 <dt><b>26th June 2022</b></dt>
 <dd>dopewars-1.6.2 released. This release improves Unicode support in the
 text-mode client, and adds support for networking on the Haiku operating system.
