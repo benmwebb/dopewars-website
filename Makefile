@@ -8,6 +8,3 @@ include ${TOPDIR}/Makefile.include
 
 ${WEB}/dopewars.css: dopewars.css
 	cp $< $@
-
-${WEB}/metaserver.php: metaserver.php
-	cp $< $@

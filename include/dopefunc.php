@@ -18,7 +18,7 @@
       'FAQ' => $DOCROOT.'faq.html',
       'Download' => $DOCROOT.'download.html',
       'Screenshots' => $DOCROOT.'screenshots/',
-      'Active servers' => 'https://dopewars.sourceforge.io/metaserver.php?getlist=2'.$mirrorID,
+      'Active servers' => 'https://dopewars.sourceforge.io/metaserver.php@getlist=2.html'.$mirrorID,
       'SourceForge project page' => 'https://sourceforge.net/projects/dopewars/',
       'GitHub' => 'https://github.com/benmwebb/dopewars'
     );
@@ -54,7 +54,7 @@
   function WriteNavLinks() {
     global $DOCROOT,$mainpage,$mirrorID;
     $validlinks = array(
-      'Active servers' => 'https://dopewars.sourceforge.io/metaserver.php?getlist=2',$mirrorID,
+      'Active servers' => 'https://dopewars.sourceforge.io/metaserver.php@getlist=2.html',$mirrorID,
       'Screenshots' => $DOCROOT.'screenshots/'
     );
 
