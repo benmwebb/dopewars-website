@@ -1,0 +1,37 @@
+name: Validate website
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Install Jinja2 and the Nu HTML Checker
+        run: |
+          pip install jinja2
+          npm install --no-save vnu-jar
+          echo "VNU_JAR=$(node -p "require('vnu-jar')")" >> "$GITHUB_ENV"
+
+      - name: Build site
+        run: |
+          mkdir -p _site/screenshots
+          make WEBTOP="$PWD/_site"
+
+      - name: Validate HTML
+        run: java -jar "$VNU_JAR" --skip-non-html _site
+
+      - name: Validate CSS
+        run: java -jar "$VNU_JAR" --css _site/dopewars.css
