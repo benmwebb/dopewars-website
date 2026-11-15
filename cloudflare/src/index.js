@@ -464,7 +464,13 @@ function htmlFooter(servername) {
   return `\n<p class="navlinks">\n  <a href="${DOCROOT}">Main Index</a>${trail}\n</p>` + OUTRO_HTML;
 }
 
-const INTRO_HTML = `<p>dopewars incorporates limited multiplayer capabilities, with a server
+const INTRO_HTML = `
+<p><i>The dopewars metaserver has moved. We recommend you upgrade to dopewars
+1.7.0, which will use the new location. To use the metaserver with older
+dopewars versions, edit your dopewars configuration file and add</i><br />
+<tt><b>MetaServer.URL="https://metaserver.dopewars.workers.dev/"</b></tt></p>
+
+<p>dopewars incorporates limited multiplayer capabilities, with a server
 mode (the -s switch). The list below is maintained automatically, providing
 that you're running a server of version 1.5.1 or above. In some cases (usually
 if you're connecting via a proxy) the metaserver may report your domain
