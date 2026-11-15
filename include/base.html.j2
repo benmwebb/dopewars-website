@@ -23,12 +23,9 @@
   'Screenshots': docroot ~ 'screenshots/',
 } -%}
 {%- set uri = 'https://dopewars.sourceforge.io/' ~ outfile -%}
-<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
- "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -71,9 +68,6 @@
 <address>
   <a href="https://jigsaw.w3.org/css-validator/validator?uri={{ uri }}">
     <img class="w3clink" src="{{ docroot }}valid-css.png" alt="Valid CSS" />
-  </a>
-  <a href="https://validator.w3.org/check?uri={{ uri }}">
-    <img class="w3clink" src="{{ docroot }}valid-xhtml11.png" alt="Valid XHTML 1.1" />
   </a>
   <a href="https://sourceforge.net/projects/dopewars">
     <img class="w3clink" src="https://sflogo.sourceforge.net/sflogo.php?group_id=11128&amp;type=12"

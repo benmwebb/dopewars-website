@@ -424,12 +424,9 @@ function formatTimestamp(ts) {
 }
 
 function htmlHeader(title) {
-  return `<?xml version="1.0" encoding="UTF-8"?>
+  return `<!DOCTYPE html>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
- "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -469,7 +466,7 @@ const INTRO_HTML = `
 <p><i>The dopewars metaserver has moved. We recommend you upgrade to dopewars
 1.7.0, which will use the new location. To use the metaserver with older
 dopewars versions, edit your dopewars configuration file and add</i><br />
-<tt><b>MetaServer.URL="https://metaserver.dopewars.workers.dev/"</b></tt></p>
+<code><b>MetaServer.URL="https://metaserver.dopewars.workers.dev/"</b></code></p>
 
 <p>dopewars incorporates limited multiplayer capabilities, with a server
 mode (the -s switch). The list below is maintained automatically, providing
@@ -483,8 +480,8 @@ maintainer.</p>
 
 <p>To prevent your server announcing itself to the outside world, add the
 line "MetaServer.Active=0" (without the quotes) to your dopewars configuration
-file (<tt>/etc/dopewars</tt> or <tt>~/.local/state/dopewars</tt> on Linux/Mac/Unix,
-<tt>C:\\Users\\user\\AppData\\Local\\dopewars\\dopewars-config.txt</tt> on Windows)
+file (<code>/etc/dopewars</code> or <code>~/.local/state/dopewars</code> on Linux/Mac/Unix,
+<code>C:\\Users\\user\\AppData\\Local\\dopewars\\dopewars-config.txt</code> on Windows)
 or run the server with the <b>-S</b> command line option rather than
 <b>-s</b>.</p>
 
@@ -503,9 +500,6 @@ const OUTRO_HTML = `
 <address>
   <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://dopewars.sourceforge.io/metaserver.php">
     <img class="w3clink" src="${DOCROOT}valid-css.png" alt="Valid CSS" />
-  </a>
-  <a href="https://validator.w3.org/check?uri=https://dopewars.sourceforge.io/metaserver.php">
-    <img class="w3clink" src="${DOCROOT}valid-xhtml11.png" alt="Valid XHTML 1.1" />
   </a>
   <a href="https://sourceforge.net/projects/dopewars">
     <img class="w3clink" src="https://sflogo.sourceforge.net/sflogo.php?group_id=11128&amp;type=12"
