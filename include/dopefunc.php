@@ -88,15 +88,6 @@
       die("Cannot figure out which file we're processing...");
     }
 
-    $fileinfo = stat($sourcefile);
-    if (!$fileinfo) {
-      die("Cannot stat PHP source file \"$sourcefile\"");
-    }
-
-    /* $fileinfo[9] is stat.m_time (last modification time) */
-    date_default_timezone_set("UTC");
-    $modtime = date("D M j G:i:s T Y",$fileinfo[9]);
-
     if ($subdir != "") {
       $fullpath = $subdir . "/" . basename($sourcefile);
     } else {
@@ -123,8 +114,7 @@
     print "  </span>\n";
 
     print "  Written by <a href=\"mailto:benwebb@users.sf.net\">".
-          "Ben Webb</a><br />\n";
-    print " This page last updated: $modtime\n";
+          "Ben Webb</a>\n";
     print "</address>\n\n</body>\n\n</html>\n";
   }
 
