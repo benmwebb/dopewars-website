@@ -5,12 +5,10 @@
 
   include "local.php";
 
-  if (isset($mirror)) { $mirrorID="&amp;mirror=$mirror"; }
-
   $mainpage=$DOCROOT;
 
   function StartHTML($title,$sitepage='') {
-    global $DOCROOT,$mainpage,$mirrorID;
+    global $DOCROOT,$mainpage;
     $sitelinks = array (
       'Main Index' => $mainpage,
       'News' => $DOCROOT.'news.html',
@@ -18,7 +16,7 @@
       'FAQ' => $DOCROOT.'faq.html',
       'Download' => $DOCROOT.'download.html',
       'Screenshots' => $DOCROOT.'screenshots/',
-      'Active servers' => 'https://dopewars.sourceforge.io/metaserver.php@getlist=2.html'.$mirrorID,
+      'Active servers' => 'https://metaserver.dopewars.workers.dev/',
       'SourceForge project page' => 'https://sourceforge.net/projects/dopewars/',
       'GitHub' => 'https://github.com/benmwebb/dopewars'
     );
@@ -52,9 +50,9 @@
   }
 
   function WriteNavLinks() {
-    global $DOCROOT,$mainpage,$mirrorID;
+    global $DOCROOT,$mainpage;
     $validlinks = array(
-      'Active servers' => 'https://dopewars.sourceforge.io/metaserver.php@getlist=2.html',$mirrorID,
+      'Active servers' => 'https://metaserver.dopewars.workers.dev/',
       'Screenshots' => $DOCROOT.'screenshots/'
     );
 
