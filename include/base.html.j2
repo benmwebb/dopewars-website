@@ -1,0 +1,90 @@
+{#- Base template for generated dopewars pages.
+
+    Child templates should set:
+      title    - page title
+      sitepage - (optional) name of this page in the site links
+      navlinks - (optional) list of navigation links below "Main Index";
+                 all but the last must be keys of validlinks below
+    and fill in the "content" block.
+-#}
+{%- set sitelinks = {
+  'Main Index': docroot,
+  'News': docroot ~ 'news.html',
+  'Documentation': docroot ~ 'docs/',
+  'FAQ': docroot ~ 'faq.html',
+  'Download': docroot ~ 'download.html',
+  'Screenshots': docroot ~ 'screenshots/',
+  'Active servers': 'https://metaserver.dopewars.workers.dev/',
+  'SourceForge project page': 'https://sourceforge.net/projects/dopewars/',
+  'GitHub': 'https://github.com/benmwebb/dopewars',
+} -%}
+{%- set validlinks = {
+  'Active servers': 'https://metaserver.dopewars.workers.dev/',
+  'Screenshots': docroot ~ 'screenshots/',
+} -%}
+{%- set uri = 'https://dopewars.sourceforge.io/' ~ outfile -%}
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+ "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="{{ docroot }}dopewars.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+  <link rel="made" type="text/html" href="mailto:benwebb@users.sf.net" />
+  <title>{{ title }}</title>
+</head>
+
+<body>
+<p class="sitelinks">
+{%- for name, url in sitelinks.items() %}
+{%- if name == sitepage|default('') %}
+  {{ name }}
+{%- else %}
+  <a href="{{ url }}">{{ name }}</a>
+{%- endif %}
+{%- if not loop.last %} *{% endif %}
+{%- endfor %}
+</p>
+
+<h1>{{ title }}</h1>
+
+{% block content %}{% endblock %}
+
+<p class="navlinks">
+  <a href="{{ docroot }}">Main Index</a>
+{%- for name in navlinks|default([]) %} :
+{%- if loop.last %}
+    {{ name }}
+{%- elif name in validlinks %}
+    <a href="{{ validlinks[name] }}">{{ name }}</a>
+{%- else %}
+{{- raise('Invalid navigation link ' ~ name ~ '!') }}
+{%- endif %}
+{%- endfor %}
+</p>
+
+<address>
+  <a href="https://jigsaw.w3.org/css-validator/validator?uri={{ uri }}">
+    <img class="w3clink" src="{{ docroot }}valid-css.png" alt="Valid CSS" />
+  </a>
+  <a href="https://validator.w3.org/check?uri={{ uri }}">
+    <img class="w3clink" src="{{ docroot }}valid-xhtml11.png" alt="Valid XHTML 1.1" />
+  </a>
+  <a href="https://sourceforge.net/projects/dopewars">
+    <img class="w3clink" src="https://sflogo.sourceforge.net/sflogo.php?group_id=11128&amp;type=12"
+     width="120" height="30"
+      alt="Fast, secure and Free Open Source software downloads" />
+  </a>
+  <span class="editlink">
+    <a class="editlink" href="https://github.com/benmwebb/dopewars-website/blob/main/{{ source }}"><i class="fab fa-github"></i> Edit on GitHub</a>
+  </span>
+  Written by <a href="mailto:benwebb@users.sf.net">Ben Webb</a>
+</address>
+
+</body>
+
+</html>

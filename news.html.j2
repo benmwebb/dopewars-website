@@ -1,8 +1,8 @@
-<?php
-  include "include/dopefunc.php";
-  StartHTML("News","News");
-?>
-
+{% extends "include/base.html.j2" %}
+{% set title = "News" %}
+{% set sitepage = "News" %}
+{% set navlinks = ['News'] %}
+{% block content -%}
 <dl>
 <dt><b>14th November 2026</b></dt>
 <dd>dopewars-1.7.0 released. This release adds support for GTK4, adds a
@@ -200,8 +200,4 @@ doing "real" work!<p /></dd>
 </dl>
 
 <p>For more details, read the dopewars <a href="/Users/ben/tmp/htdocs">ChangeLog</a>.</p>
-
-<?php
-  WriteNavLinks("News");
-  EndHTML("news.html");
-?>
+{% endblock %}

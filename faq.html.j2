@@ -1,8 +1,8 @@
-<?php
-  include "include/dopefunc.php";
-  StartHTML("Frequently-Asked Questions","FAQ");
-?>
-
+{% extends "include/base.html.j2" %}
+{% set title = "Frequently-Asked Questions" %}
+{% set sitepage = "FAQ" %}
+{% set navlinks = ['FAQ'] %}
+{% block content -%}
 <ul>
 <li><a href="#os">What operating systems is dopewars available for?</a></li>
 <li><a href="#depend">What other packages do I need to install
@@ -222,8 +222,4 @@ so that developers can keep track of all desired new features.
 <p /></dd>
 
 </dl>
-
-<?php
-  WriteNavLinks("FAQ");
-  EndHTML("faq.html");
-?>
+{% endblock %}

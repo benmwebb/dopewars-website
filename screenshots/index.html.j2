@@ -1,0 +1,56 @@
+{% extends "include/base.html.j2" %}
+{%- set images = {
+  'Linux graphical (GTK+) client (version 1.5.0)': {
+    'Multi-player mode': 'linux-gtk-multi',
+  },
+  'Linux console-mode (ncurses) client (version 1.5.0)': {
+    'Single-player mode (Brazilian Portuguese translation)':
+      'linux-curses-ptbr',
+    'Multi-player mode': 'linux-curses-multi',
+  },
+  'Windows client (version 1.5.2)': {
+    'Single-player mode, under Win98': 'win32-single',
+    'Multi-player mode, under WinXP': 'winxp-multi',
+  },
+} %}
+{#- If "pic" is given, generate the full-size page for that picture;
+    otherwise, generate the index of all pictures #}
+{%- if pic is defined %}
+{%- set match = namespace(category='', name='') %}
+{%- for category, picarray in images.items() %}
+{%- for name, prefix in picarray.items() if prefix == pic %}
+{%- set match.category = category %}
+{%- set match.name = name %}
+{%- endfor %}
+{%- endfor %}
+{%- set title = 'Screenshots - ' ~ match.category %}
+{%- set navlinks = ['Screenshots', match.category] %}
+{%- else %}
+{%- set title = 'Screenshots' %}
+{%- set sitepage = 'Screenshots' %}
+{%- set navlinks = ['Screenshots'] %}
+{%- endif %}
+{% block content -%}
+{% if pic is defined -%}
+{% if not match.name %}{{ raise('Invalid picture ' ~ pic) }}{% endif -%}
+<h2>{{ match.name }}</h2>
+
+<p><img src="{{ pic }}.png" alt="{{ match.name }}" /></p>
+{%- else -%}
+<p>Click on the images for full-size pictures.</p>
+
+<ul>
+{%- for category, picarray in images.items() %}
+<li>{{ category }}
+<ul>
+{%- for name, prefix in picarray.items() %}
+<li>{{ name }}<br />
+<a href="{{ prefix }}.html">
+  <img src="{{ prefix }}-small.png" alt="{{ name }}" />
+</a></li>
+{% endfor %}
+</ul></li>
+{%- endfor %}
+</ul>
+{%- endif %}
+{% endblock %}

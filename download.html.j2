@@ -1,13 +1,11 @@
-<?php
-  include "include/dopefunc.php";
-  StartHTML("Download","Download");
-
-  function Download($url,$name='') {
-    global $dnlroot;  /* Server where the files are stored - passed in */
-    if ($name=='') $name = $url;
-    print "<a href=\"$dnlroot$url\">$name</a>";
-  }
-?>
+{% extends "include/base.html.j2" %}
+{% set title = "Download" %}
+{% set sitepage = "Download" %}
+{% set navlinks = ['Download'] %}
+{% macro download(url, name='') -%}
+<a href="{{ dnlroot }}{{ url }}">{{ name or url }}</a>
+{%- endmacro %}
+{% block content -%}
 
 <p>dopewars should compile on practically any UNIX system which has the
 (n)curses library. It can also be compiled on Windows systems; see below.
@@ -23,35 +21,35 @@ numbers!</p>
 <p>All RPMs are <a href="http://www.gnupg.org/">GnuPG</a> signed with
 <a href="https://dopewars.sourceforge.io/pubkey256.txt">this public key</a>.
 GPG-signed SHA256 checksums of all downloadable material
-<?php Download("SHA256-1.7.0.txt.asc", "are also available"); ?>.
+{{ download("SHA256-1.7.0.txt.asc", "are also available") }}.
 </p>
 
 <h3>Microsoft Windows</h3>
 <p>Windows installer (Windows 7 or later), version 1.7.0: &nbsp;
-<?php Download("dopewars-1.7.0-32bit.exe", "32-bit"); ?>; &nbsp;
-<?php Download("dopewars-1.7.0-64bit.exe", "64-bit"); ?>
+{{ download("dopewars-1.7.0-32bit.exe", "32-bit") }}; &nbsp;
+{{ download("dopewars-1.7.0-64bit.exe", "64-bit") }}
 <br />
 (just run this program, and it will install dopewars automatically for you;
 if you're worried about Internet Explorer's "security" warning, see the
 <a href="faq.html#windows">FAQ</a>, or check its
-<?php Download("SHA256-1.7.0.txt.asc", "checksum and GPG signature"); ?>).
+{{ download("SHA256-1.7.0.txt.asc", "checksum and GPG signature") }}).
 </p>
 
 <h3>RedHat Enterprise Linux 8 (and similar)</h3>
 <p>Binary RPM for 64-bit RedHat Enterprise 8, version 1.7.0: &nbsp;
-<?php Download("dopewars-1.7.0-1.el8.x86_64.rpm"); ?>
+{{ download("dopewars-1.7.0-1.el8.x86_64.rpm") }}
 <br />
 SDL_mixer (Simple DirectMedia Layer) sound plugin: &nbsp;
-<?php Download("dopewars-sdl-1.7.0-1.el8.x86_64.rpm"); ?>
+{{ download("dopewars-sdl-1.7.0-1.el8.x86_64.rpm") }}
 </p>
 
 <h3>Source code</h3>
 <p>Source RPM, version 1.7.0: &nbsp;
-<?php Download("dopewars-1.7.0-1.el8.src.rpm"); ?>
+{{ download("dopewars-1.7.0-1.el8.src.rpm") }}
 </p>
 
 <p>Source code tarball, version 1.7.0: &nbsp;
-<?php Download("dopewars-1.7.0.tar.gz"); ?>
+{{ download("dopewars-1.7.0.tar.gz") }}
 </p>
 
 <h3>Other Linux/Unix</h3>
@@ -140,8 +138,4 @@ contain bugs, including some severe security problems!</p>
 <a href="oldversions/dopewars-1.4.0.tar.gz">Version 1.4.0</a>
  Released: 27-4-99<br />
 </p>
-
-<?php
-  WriteNavLinks("Download");
-  EndHTML("download.html");
-?>
+{% endblock %}
