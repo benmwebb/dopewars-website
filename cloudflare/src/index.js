@@ -509,9 +509,9 @@ const OUTRO_HTML = `
   <a href="https://sourceforge.net/projects/dopewars">
     <img class="w3clink" src="https://sflogo.sourceforge.net/sflogo.php?group_id=11128&amp;type=12"
      width="120" height="30"
-      alt="Fast, secure and Free Open Source software downloads" />  </a>
+      alt="dopewars on SourceForge" />  </a>
   <span class="editlink">
-    <a class="editlink" href="https://github.com/benmwebb/dopewars-website/blob/main/cloudflare/src/index.js"><i class="fab fa-github"></i> Edit on GitHub</a>
+    <a class="editlink" href="https://github.com/benmwebb/dopewars-website/blob/main/cloudflare/src/index.js"><i class="fab fa-github" aria-hidden="true"></i> Edit on GitHub</a>
   </span>
   Written by <a href="mailto:benwebb@users.sf.net">Ben Webb</a><br />
 </address>
