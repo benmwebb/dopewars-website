@@ -32,6 +32,10 @@ a.skiplink:focus { left: 0.5em;
                 padding: 0.3em 0.5em;
                 background-color: #ffffff }
 
+/* Was <h3>; keeps the same look without breaking the heading outline */
+p.news        { font-weight: bold;
+                font-size: 1.17em }
+
 /* Keep images and preformatted text inside the screen width */
 img           { max-width: 100%;
                 height: auto }

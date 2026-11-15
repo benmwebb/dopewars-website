@@ -120,7 +120,7 @@ async function serverInfo(ctx, server) {
       WHERE HostName = ? ORDER BY highscores.ID`
   ).bind(server).all();
 
-  out.push("<h3>Scores for multiplayer mode</h3>\n\n");
+  out.push("<h2>Scores for multiplayer mode</h2>\n\n");
   if (results.length === 0) {
     out.push("<p>No data available for this server - it has, most likely, gone down.</p>\n\n");
     return;
