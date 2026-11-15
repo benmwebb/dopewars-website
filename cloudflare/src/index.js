@@ -88,7 +88,7 @@ async function showServers(ctx) {
 
   out.push(htmlHeader("Active dopewars servers"));
   out.push(INTRO_HTML);
-  out.push(`<table border="1">\n\n<tr><th>Server name</th><th>Port</th><th>Version</th>
+  out.push(`<div class="tablewrap"><table border="1">\n\n<tr><th>Server name</th><th>Port</th><th>Version</th>
 <th>Players</th><th>Max. Players</th><th>Last update</th>
 <th>Up since</th><th>Comment</th></tr>\n\n`);
   for (const r of results) {
@@ -105,7 +105,7 @@ async function showServers(ctx) {
 <td>${esc(r.Comment)}</td>
 </tr>\n\n`);
   }
-  out.push("</table>\n\n");
+  out.push("</table></div>\n\n");
 }
 
 // ---------------------------------------------------------------- high scores
@@ -125,12 +125,12 @@ async function serverInfo(ctx, server) {
     out.push("<p>No data available for this server - it has, most likely, gone down.</p>\n\n");
     return;
   }
-  out.push(`<table border="1"><tr><th>Score</th><th>Date</th>\n<th>Name</th><th>Status</th></tr>\n\n`);
+  out.push(`<div class="tablewrap"><table border="1"><tr><th>Score</th><th>Date</th>\n<th>Name</th><th>Status</th></tr>\n\n`);
   for (const r of results) {
     out.push(`<tr>\n<td>${esc(r.Score)}</td>\n<td>${esc(r.Date)}</td>\n` +
              `<td>${esc(r.Name)}</td>\n<td>${esc(r.Status)}</td>\n</tr>\n`);
   }
-  out.push("</table>\n");
+  out.push("</table></div>\n");
 }
 
 // ---------------------------------------------------------------- registration
@@ -433,6 +433,7 @@ function htmlHeader(title) {
 
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" href="${DOCROOT}dopewars.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
   <link rel="made" type="text/html" href="mailto:benwebb@users.sf.net" />
