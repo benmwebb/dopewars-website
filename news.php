@@ -199,7 +199,7 @@ doing "real" work!<p /></dd>
 
 </dl>
 
-<p>For more details, read the dopewars <a href="CHANGELOG">CHANGELOG</a>.</p>
+<p>For more details, read the dopewars <a href="/Users/ben/tmp/htdocs">ChangeLog</a>.</p>
 
 <?php
   WriteNavLinks("News");
