@@ -48,6 +48,9 @@ address       { overflow: hidden;
 /* Wide tables scroll sideways on small screens instead of widening the page */
 div.tablewrap { overflow-x: auto }
 
+/* Space between FAQ answers and news items */
+dd            { margin-bottom: 1em }
+
 table.mirrors { width: 100%;
                 text-align: center }
 
