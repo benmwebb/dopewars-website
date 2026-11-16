@@ -35,7 +35,7 @@
 {% if not match.name %}{{ raise('Invalid picture ' ~ pic) }}{% endif -%}
 <h2>{{ match.name }}</h2>
 
-<p><img src="{{ pic }}.png" alt="{{ match.name }}" /></p>
+<p><img src="{{ pic }}.png" alt="{{ match.name }}"></p>
 {%- else -%}
 <p>Click on the images for full-size pictures.</p>
 
@@ -44,9 +44,9 @@
 <li>{{ category }}
 <ul>
 {%- for name, prefix in picarray.items() %}
-<li>{{ name }}<br />
+<li>{{ name }}<br>
 <a href="{{ prefix }}.html">
-  <img src="{{ prefix }}-small.png" alt="{{ name }}" />
+  <img src="{{ prefix }}-small.png" alt="{{ name }}">
 </a></li>
 {% endfor %}
 </ul></li>
