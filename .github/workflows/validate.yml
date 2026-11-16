@@ -23,7 +23,7 @@ jobs:
         run: |
           pip install jinja2
           npm install --no-save vnu-jar
-          echo "VNU_JAR=$(node -p "require('vnu-jar')")" >> "$GITHUB_ENV"
+          echo "VNU_JAR=$(node -p "String(require('vnu-jar'))")" >> "$GITHUB_ENV"
 
       - name: Build site
         run: |
