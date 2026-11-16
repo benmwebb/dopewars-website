@@ -438,18 +438,23 @@ function htmlHeader(title) {
 </head>
 
 <body>
-<p class="sitelinks">
-  <a href="${DOCROOT}">Main Index</a> *
-  <a href="${DOCROOT}news.html">News</a> *
-  <a href="${DOCROOT}docs/index.html">Documentation</a> *
-  <a href="${DOCROOT}faq.html">FAQ</a> *
-  <a href="${DOCROOT}download.html">Download</a> *
-  <a href="${DOCROOT}screenshots/index.html">Screenshots</a> *
-  Active servers *
-  <a href="https://sourceforge.net/projects/dopewars/">SourceForge project page</a> *
-  <a href="https://github.com/benmwebb/dopewars">GitHub</a>
-</p>
+<a class="skiplink" href="#content">Skip to main content</a>
 
+<nav aria-label="Site">
+<ul class="sitelinks">
+<li><a href="${DOCROOT}">Main Index</a></li>
+<li><span aria-hidden="true">* </span><a href="${DOCROOT}news.html">News</a></li>
+<li><span aria-hidden="true">* </span><a href="${DOCROOT}docs/index.html">Documentation</a></li>
+<li><span aria-hidden="true">* </span><a href="${DOCROOT}faq.html">FAQ</a></li>
+<li><span aria-hidden="true">* </span><a href="${DOCROOT}download.html">Download</a></li>
+<li><span aria-hidden="true">* </span><a href="${DOCROOT}screenshots/index.html">Screenshots</a></li>
+<li><span aria-hidden="true">* </span><span aria-current="page">Active servers</span></li>
+<li><span aria-hidden="true">* </span><a href="https://sourceforge.net/projects/dopewars/">SourceForge project page</a></li>
+<li><span aria-hidden="true">* </span><a href="https://github.com/benmwebb/dopewars">GitHub</a></li>
+</ul>
+</nav>
+
+<main id="content">
 <h1>${esc(title)}</h1>
 
 `;
@@ -457,9 +462,9 @@ function htmlHeader(title) {
 
 function htmlFooter(servername) {
   const trail = servername
-    ? ` :\n  <a href="?getlist=2">Active servers</a> :\n  ${esc(servername)}`
-    : " :\n  Active servers";
-  return `\n<p class="navlinks">\n  <a href="${DOCROOT}">Main Index</a>${trail}\n</p>` + OUTRO_HTML;
+    ? ` <span aria-hidden="true">:</span>\n  <a href="?getlist=2">Active servers</a> <span aria-hidden="true">:</span>\n  <span aria-current="page">${esc(servername)}</span>`
+    : ' <span aria-hidden="true">:</span>\n  <span aria-current="page">Active servers</span>';
+  return `\n</main>\n\n<nav aria-label="Breadcrumb" class="navlinks">\n  <a href="${DOCROOT}">Main Index</a>${trail}\n</nav>` + OUTRO_HTML;
 }
 
 const INTRO_HTML = `

@@ -37,33 +37,41 @@
 </head>
 
 <body>
-<p class="sitelinks">
-{%- for name, url in sitelinks.items() %}
-{%- if name == sitepage|default('') %}
-  {{ name }}
-{%- else %}
-  <a href="{{ url }}">{{ name }}</a>
-{%- endif %}
-{%- if not loop.last %} *{% endif %}
-{%- endfor %}
-</p>
+<a class="skiplink" href="#content">Skip to main content</a>
 
+<nav aria-label="Site">
+<ul class="sitelinks">
+{%- for name, url in sitelinks.items() %}
+<li>
+{%- if not loop.first %}<span aria-hidden="true">* </span>{% endif %}
+{%- if name == sitepage|default('') -%}
+  <span aria-current="page">{{ name }}</span>
+{%- else -%}
+  <a href="{{ url }}">{{ name }}</a>
+{%- endif -%}
+</li>
+{%- endfor %}
+</ul>
+</nav>
+
+<main id="content">
 <h1>{{ title }}</h1>
 
 {% block content %}{% endblock %}
+</main>
 
-<p class="navlinks">
+<nav aria-label="Breadcrumb" class="navlinks">
   <a href="{{ docroot }}">Main Index</a>
-{%- for name in navlinks|default([]) %} :
+{%- for name in navlinks|default([]) %} <span aria-hidden="true">:</span>
 {%- if loop.last %}
-    {{ name }}
+    <span aria-current="page">{{ name }}</span>
 {%- elif name in validlinks %}
     <a href="{{ validlinks[name] }}">{{ name }}</a>
 {%- else %}
 {{- raise('Invalid navigation link ' ~ name ~ '!') }}
 {%- endif %}
 {%- endfor %}
-</p>
+</nav>
 
 <address>
   <a href="https://jigsaw.w3.org/css-validator/validator?uri={{ uri }}">
