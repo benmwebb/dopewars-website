@@ -503,7 +503,7 @@ see the current high scores.</p>
 const OUTRO_HTML = `
 
 <address>
-  <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://dopewars.sourceforge.io/metaserver.php">
+  <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://metaserver.dopewars.workers.dev/">
     <img class="w3clink" src="${DOCROOT}valid-css.png" alt="Valid CSS" />
   </a>
   <a href="https://sourceforge.net/projects/dopewars">
